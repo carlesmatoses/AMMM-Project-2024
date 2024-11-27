@@ -70,10 +70,11 @@ int select_best_candidate() {
 
     // Collect candidates and their compatibility scores
     for (int candidate = 0; candidate < N; ++candidate) {
-        if (candidates[candidate] && is_valid_candidate(candidate)) {
+        if (candidates[candidate] and is_valid_candidate(candidate)) {
             double compatibility = compute_candidate_compatibility(candidate);
             candidate_scores.push_back({candidate, compatibility});
         }
+        else candidates[candidate] = false;
     }
 
     // If there are no valid candidates, return -1
