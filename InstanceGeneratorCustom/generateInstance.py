@@ -6,8 +6,11 @@ import random
 import json
 
 def generate_members_for_department(D, N, constant=0):
-    if constant:
-        return [constant] * D
+    if isinstance(constant, int):
+        if constant > 0:
+            return [constant] * D
+    elif isinstance(constant, list):
+        return constant
     
     max_members_per_department = N // D
     members = [random.randint(1, max_members_per_department) for _ in range(D)]

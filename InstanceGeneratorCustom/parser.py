@@ -14,13 +14,18 @@ def parse_config(config_path):
             if line and '=' in line:
                 key, value = line.split('=', 1)
                 value = value.strip().strip(';')
-                if value.isdigit():
-                    value = int(value)
-                elif value.replace('.', '', 1).isdigit() and value.count('.') < 2:
-                    value = float(value)
-                elif value.lower() in ['true', 'false']:
-                    value = value.lower() == 'true'
+                if ' ' in value:
+                    # Handle array format
+                    value = [int(v) for v in value.split()]
+                else:
+                    if value.isdigit():
+                        value = int(value)
+                    elif value.replace('.', '', 1).isdigit() and value.count('.') < 2:
+                        value = float(value)
+                    elif value.lower() in ['true', 'false']:
+                        value = value.lower() == 'true'
                 config[key.strip()] = value
             elif line and '=' not in line:
                 raise ValueError(f"Invalid syntax in config file at line: '{line}'")
+    print(config)
     return config
