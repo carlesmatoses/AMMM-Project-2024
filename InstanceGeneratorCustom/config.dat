@@ -1,0 +1,5 @@
+D = 4; // number of departments
+N = 40; // number of members
+n = 4; // required members per group, if(0):random(1,N//D) 
+
+out = examples/project.test2.dat
