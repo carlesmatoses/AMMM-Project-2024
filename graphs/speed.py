@@ -1,4 +1,3 @@
-
 solution_cplex = [
     {"OBJECTIVE": 0.899166667, "commission": [4,5,6,10]                 , "time":    0.17, "members": 10, "departments":2},
     {"OBJECTIVE": 0.861805556, "commission": [2,3,6,9,10,12,13,14,17]   , "time":    0.66, "members": 20, "departments":3},
@@ -19,3 +18,24 @@ solution_greedy = [
     {"OBJECTIVE": 0.83       , "commission": [2, 5, 8, 17, 20, 21, 28, 30, 38]  , "time":  None  , "members": 38, "departments":3},
     {"OBJECTIVE": 0.839722   , "commission": [2, 4, 10, 15, 18, 22, 29, 31, 38] , "time":  None  , "members": 40, "departments":3},
 ]
+
+import matplotlib.pyplot as plt
+plt.style.use('ggplot')
+
+# Extract data for plotting
+members = [entry["members"] for entry in solution_cplex]
+times = [entry["time"] for entry in solution_cplex]
+
+# Plot the data
+plt.figure(figsize=(10, 6))
+plt.plot(members, times, marker='o', linestyle='-', color='b', label='CPLEX')
+
+# Add labels and title
+plt.xlabel('Members')
+plt.ylabel('Time (s)')
+plt.title('CPLEX Solution: Members vs Time')
+plt.legend()
+plt.grid(True)
+
+# Show the plot
+plt.show()
