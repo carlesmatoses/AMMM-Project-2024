@@ -1,0 +1,2 @@
+Commission: {2, 4, 10, 15, 18, 22, 29, 31, 38}
+Average compatibility: 0.839722

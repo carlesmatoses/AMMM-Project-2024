@@ -18,9 +18,9 @@ def run():
     return 0
 
 def customGenerator():
-    D = [2, 3, 3, 4, 4]
-    N = [10,20,30,40,50]
-    for i in range(5):
+    D = [ 3, 3, 3, 3]
+    N = [32,34,36,38]
+    for i in range(len(D)):
         data = {
             "D": D[i],
             "N": N[i],

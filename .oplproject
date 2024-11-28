@@ -9,7 +9,7 @@
             <ref name="project.mod" type="model">
 			</ref>
             			
-            <ref name="InstanceGeneratorCustom/examples/project.4_40.dat" type="data">
+            <ref name="InstanceGeneratorCustom/examples/project.3_38.dat" type="data">
 			</ref>
             		
         </config>
