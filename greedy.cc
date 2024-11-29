@@ -10,13 +10,16 @@ int D, N;
 vector<int> n, d;
 vector<vector<double>> m;
 
-vector<bool> commission;
 vector<bool> candidates;
 
 
-bool is_valid_candidate(int candidate) {
+bool is_valid_candidate(int candidate, const vector<bool> commission) {
     int department = d[candidate];
-    if (n[department] <= 0) return false;
+    int department_count = 0;
+    for (int i = 0; i < N; ++i) {
+        if (commission[i] and d[i] == department) ++department_count;
+    }
+    if (department_count >= n[department]) return false;
 
     for (int i = 0; i < N; ++i) {
         if (commission[i] and m[candidate][i] == 0) return false;
@@ -34,7 +37,7 @@ bool is_valid_candidate(int candidate) {
     return true;
 }
 
-double compute_total_compatibility() {
+double compute_total_compatibility(const vector<bool>& commission) {
     double total_compatibility = 0.0;
 
     for (int i = 0; i < N; ++i) {
@@ -50,7 +53,7 @@ double compute_total_compatibility() {
     return total_compatibility;
 }
 
-double compute_candidate_compatibility(int candidate) {
+double compute_candidate_compatibility(int candidate, const vector<bool>& commission) {
     double compatibility = 0.0;
     for (int i = 0; i < N; ++i) {
         if (commission[i]) {
@@ -65,13 +68,13 @@ bool compare_candidates_by_compatibility(const pair<int, double>& a, const pair<
     return a.second > b.second;  // Sort in descending order of compatibility score
 }
 
-int select_best_candidate() {
+int select_best_candidate(const vector<bool>& commission) {
     vector<pair<int, double>> candidate_scores;
 
     // Collect candidates and their compatibility scores
     for (int candidate = 0; candidate < N; ++candidate) {
-        if (candidates[candidate] and is_valid_candidate(candidate)) {
-            double compatibility = compute_candidate_compatibility(candidate);
+        if (candidates[candidate] and is_valid_candidate(candidate, commission)) {
+            double compatibility = compute_candidate_compatibility(candidate, commission);
             candidate_scores.push_back({candidate, compatibility});
         }
         else candidates[candidate] = false;
@@ -88,18 +91,18 @@ int select_best_candidate() {
 }
 
 void solve_greedy() {
-    int total_members_needed = 0;
-    for (int ni : n) total_members_needed += ni;
+    candidates = vector<bool>(N, true);  // All members are initially candidates
+    vector<bool> commission = vector<bool>(N, false); // No members are in the commission initially
+    
+    int total_members_needed = accumulate(n.begin(), n.end(), 0);
 
     while (accumulate(commission.begin(), commission.end(), 0) < total_members_needed) {
-        int selected_candidate = select_best_candidate();
+        int selected_candidate = select_best_candidate(commission);
         if (selected_candidate == -1) {
             cout << "No valid solution found" << endl;
             break;
         }
         commission[selected_candidate] = true;
-        int department = d[selected_candidate];
-        n[department]--;
         candidates[selected_candidate] = false;
     }
 
@@ -116,7 +119,7 @@ void solve_greedy() {
         }
         cout << "}" << endl;
 
-        double total_compatibility = compute_total_compatibility();
+        double total_compatibility = compute_total_compatibility(commission);
         int num_pairs = (total_members_needed * (total_members_needed - 1)) / 2;
         double average_compatibility = total_compatibility / num_pairs;
 
@@ -143,9 +146,6 @@ int main() {
                 cin >> m[i][j];
             }
         }
-        
-        candidates = vector<bool>(N, true);  // All members are initially candidates
-        commission = vector<bool>(N, false); // No members are in the commission initially
         
         solve_greedy();
     }
