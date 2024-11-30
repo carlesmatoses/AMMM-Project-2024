@@ -51,28 +51,26 @@ class Solver_GRASP(_Solver):
         # get an empty solution for the problem
         solution = self.instance.createSolution()
         
-        # get tasks and sort them by their total required resources in descending order
-        tasks = self.instance.getTasks()
-        sortedTasks = sorted(tasks, key=lambda t: t.getTotalResources(), reverse=True)
+        # get members and sort them by their total affinity in descending order
+        members = self.instance.getMembers()
+        sortedMembers = sorted(members, key=lambda t: t.getWeight(), reverse=True)
 
-
-        # for each task taken in sorted order
-        for task in sortedTasks:
-            taskId = task.getId()
+        # for each member taken in sorted order
+        for member in sortedMembers:
             
             # compute feasible assignments
-            candidateList = solution.findFeasibleAssignments(taskId)
+            candidateList = solution.findFeasibleAssignments()
 
             # no candidate assignments => no feasible assignment found
             if not candidateList:
-                solution.makeInfeasible()
+                # solution.makeInfeasible()
                 break
             
             # select an assignment
-            candidate = self._selectCandidate(candidateList, alpha)
+            candidate = random.choice(candidateList)#self._selectCandidate(candidateList, alpha)
 
             # assign the current task to the CPU that resulted in a minimum highest load
-            solution.assign(taskId, candidate.cpuId)
+            solution.assign(candidate.memberId)
             
         return solution
     
@@ -82,32 +80,40 @@ class Solver_GRASP(_Solver):
 
     def solve(self, **kwargs):
         self.startTimeMeasure()
-        incumbent = self.instance.createSolution()
+        incumbent = self.instance.createSolution() # return Solution object
         incumbent.makeInfeasible()
-        bestHighestLoad = incumbent.getFitness()
-        self.writeLogLine(bestHighestLoad, 0)
+        bestCompatibility = incumbent.getFitness()
+        self.writeLogLine(bestCompatibility, 0)
 
         iteration = 0
         while not self.stopCriteria():
             iteration += 1
             
+            if iteration % 100 == 0:
+                print(f"Iteration: {iteration}, Best Compatibility: {bestCompatibility}")
+            
+            if iteration > 100000:
+                break
+            
             # force first iteration as a Greedy execution (alpha == 0)
             alpha = 0 if iteration == 1 else self.config.alpha
 
             solution = self._greedyRandomizedConstruction(alpha)
-            if self.config.localSearch:
-                localSearch = LocalSearch(self.config, None)
-                endTime = self.startTime + self.config.maxExecTime
-                solution = localSearch.solve(solution=solution, startTime=self.startTime, endTime=endTime)
+            # TODO: implement local search
+            # if self.config.localSearch:
+            #     localSearch = LocalSearch(self.config, None)
+            #     endTime = self.startTime + self.config.maxExecTime
+            #     solution = localSearch.solve(solution=solution, startTime=self.startTime, endTime=endTime)
 
             if solution.isFeasible():
-                solutionHighestLoad = solution.getFitness()
-                if solutionHighestLoad < bestHighestLoad :
+                # solution.updateFitness()
+                solutionObjective = solution.getFitness()
+                if solutionObjective > bestCompatibility :
                     incumbent = solution
-                    bestHighestLoad = solutionHighestLoad
-                    self.writeLogLine(bestHighestLoad, iteration)
+                    bestCompatibility = solutionObjective
+                    self.writeLogLine(bestCompatibility, iteration)
 
-        self.writeLogLine(bestHighestLoad, iteration)
+        self.writeLogLine(bestCompatibility, iteration)
         self.numSolutionsConstructed = iteration
         self.printPerformance()
         return incumbent

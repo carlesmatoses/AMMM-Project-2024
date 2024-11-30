@@ -17,7 +17,8 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 
-from problem.Task import Task
+from problem.Member import Member
+from problem.Department import Department
 from problem.CPU import CPU
 from problem.solution import Solution
 
@@ -26,20 +27,21 @@ class Instance(object):
     def __init__(self, config, inputData):
         self.config = config
         self.inputData = inputData
-        D = inputData.D
-        N = inputData.N
-        d = inputData.d
-        n = inputData.n
-        m = inputData.m
+        self.D = inputData.D
+        self.N = inputData.N
+        self.d = inputData.d
+        self.n = inputData.n
+        self.m = inputData.m
 
-        # self.tasks = [None] * nTasks  # vector with tasks
-        # for tId in range(0, nTasks):  # tId = 0..(nTasks-1)
-        #     self.tasks[tId] = Task(tId, rt[tId])
+        # TODO: Generate auxiliar classes
+        self.members = [None] * self.N  # vector with members
+        for nId in range(0, self.N):  # nId = 0..(N-1)
+            self.members[nId] = Member(nId, self.d[nId]-1, self.m[nId])
 
-        # self.cpus = [None] * nCPUs  # vector with cpus
-        # for cId in range(0, nCPUs):  # cId = 0..(nCPUs-1)
-        #     self.cpus[cId] = CPU(cId, self.rc[cId])
-
+        self.departments = [None] * self.D
+        for dId in range(0, self.D):
+            self.departments[dId] = Department(dId, self.n[dId])
+            
     def getNumMembers(self):
         return len(self.N)
 
@@ -47,31 +49,21 @@ class Instance(object):
         return len(self.D)
 
     def getMembers(self):
-        return self.d
+        return self.members
 
     def getDepartments(self):
         return self.n
     
-    def getCompatibility(self):
+    def getCompatibilityMatrix(self):
         return self.m
     
     def createSolution(self):
-        solution = Solution(self.tasks, self.cpus, self.rc)
+        # TODO: initate the solution with the auxiliar classes
+        solution = Solution(self.members, [Department(dId, self.n[dId]) for dId in range(0, self.D)])
         solution.setVerbose(self.config.verbose)
         return solution
 
     def checkInstance(self):
-        totalCapacityCPUs = 0.0
-        maxCPUCapacity = 0.0
-        for cpu in self.cpus:
-            capacity = cpu.getTotalCapacity()
-            totalCapacityCPUs += capacity
-            maxCPUCapacity = max(maxCPUCapacity, capacity)
+        # TODO: Add checks to verify if the instance is feasible
 
-        totalResourcesTasks = 0.0
-        for task in self.tasks:
-            resources = task.getTotalResources()
-            totalResourcesTasks += resources
-            if resources > maxCPUCapacity: return False
-
-        return totalCapacityCPUs >= totalResourcesTasks
+        return True
