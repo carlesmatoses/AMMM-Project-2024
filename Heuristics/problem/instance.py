@@ -19,7 +19,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 from problem.Member import Member
 from problem.Department import Department
-from problem.CPU import CPU
 from problem.solution import Solution
 
 
@@ -43,10 +42,10 @@ class Instance(object):
             self.departments[dId] = Department(dId, self.n[dId])
             
     def getNumMembers(self):
-        return len(self.N)
+        return self.N
 
     def getNumDepartments(self):
-        return len(self.D)
+        return self.D
 
     def getMembers(self):
         return self.members

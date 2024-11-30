@@ -52,11 +52,11 @@ class Solver_GRASP(_Solver):
         solution = self.instance.createSolution()
         
         # get members and sort them by their total affinity in descending order
-        members = self.instance.getMembers()
-        sortedMembers = sorted(members, key=lambda t: t.getWeight(), reverse=True)
+        # members = self.instance.getMembers()
+        # sortedMembers = sorted(members, key=lambda t: t.getWeight(), reverse=True)
 
         # for each member taken in sorted order
-        for member in sortedMembers:
+        for i in range(0, self.numMembers):
             
             # compute feasible assignments
             candidateList = solution.findFeasibleAssignments()
@@ -83,16 +83,21 @@ class Solver_GRASP(_Solver):
         incumbent = self.instance.createSolution() # return Solution object
         incumbent.makeInfeasible()
         bestCompatibility = incumbent.getFitness()
+        self.numMembers = self.instance.getNumMembers()
         self.writeLogLine(bestCompatibility, 0)
 
         iteration = 0
+        last_time_check = time.time()
         while not self.stopCriteria():
             iteration += 1
             
-            if iteration % 100 == 0:
-                print(f"Iteration: {iteration}, Best Compatibility: {bestCompatibility}")
-            
-            if iteration > 100000:
+            if iteration % 1000 == 0:
+                current_time = time.time()
+                elapsed_time = current_time - last_time_check
+                print(f"Elapsed time for {iteration} iterations: {elapsed_time} seconds")
+                last_time_check = current_time
+                
+            if iteration > 10000:
                 break
             
             # force first iteration as a Greedy execution (alpha == 0)
