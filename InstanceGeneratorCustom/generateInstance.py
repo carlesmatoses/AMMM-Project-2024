@@ -45,13 +45,13 @@ def generate_matrix(N):
     combinations_dic = {(i,j):None for i, j in combinations_list}
     for i in combinations_dic.keys():
         value = round(random.uniform(0, 1), 2)
-        if value < 0.02:
+        if value < 0.1:
             value = 0.00
-        elif value < 0.04:
+        elif value < 0.2:
             value = 0.14
-        elif value < 0.85:
+        elif value < 0.9:
             value = max((value+2)/3,0.15)
-        elif value > 0.85:
+        elif value > 0.9:
             value = 1.00 
         combinations_dic[i] = round(value,2)
 
