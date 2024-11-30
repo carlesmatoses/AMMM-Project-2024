@@ -26,8 +26,9 @@ from problem.Department import Department
 # This class stores the load of the highest loaded CPU
 # when a task is assigned to a CPU.
 class Assignment(object):
-    def __init__(self, member:int):
+    def __init__(self, member:int, weight:int=0):
         self.memberId = member
+        self.weight = weight
 
     def __str__(self):
         return f"member: {self.memberId}"
@@ -140,12 +141,10 @@ class Solution(_Solution):
         for member in range(len(self.members)):
             feasible = self.assign(member)
             if not feasible: continue
-            assignment = Assignment(member)
+            assignment = Assignment(member, self.members[member].getWeight())
             feasibleAssignments.append(assignment)
 
             self.unassign(member)
-        
-        #     self.unassign(taskId, cpuId)
 
         return feasibleAssignments
 
