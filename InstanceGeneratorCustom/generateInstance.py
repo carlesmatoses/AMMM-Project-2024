@@ -4,6 +4,7 @@
 
 import random
 import json
+from itertools import combinations
 
 def generate_members_for_department(D, N, constant=0):
     if isinstance(constant, int):
@@ -26,25 +27,41 @@ def generate_department_for_member(D, N):
     return members
 
 def generate_matrix(N):
+    # simertix matrix where (i,j) is the compatibility between member i and member j which is the same as (j,i).
     matrix = []
     for i in range(N):
         row = []
         for j in range(N):
             if i == j:
-                row.append(1.00)  # Diagonal elements are 1
+                row.append(1.0)
             else:
-                value = round(random.uniform(0, 1), 2)
-                if value < 0.02:
-                    value = 0
-                elif value < 0.04:
-                    value = 0.14
-                elif value < 0.85:
-                    value = max((value+2)/3,0.15)
-                elif value > 0.85:
-                    value = 1 
-                row.append(value)
+                row.append(0.0)
         matrix.append(row)
+
+    def generate_combinations(N):
+        return list(combinations(range(N), 2))
+
+    combinations_list = generate_combinations(N)
+    combinations_dic = {(i,j):None for i, j in combinations_list}
+    for i in combinations_dic.keys():
+        value = round(random.uniform(0, 1), 2)
+        if value < 0.02:
+            value = 0.00
+        elif value < 0.04:
+            value = 0.14
+        elif value < 0.85:
+            value = max((value+2)/3,0.15)
+        elif value > 0.85:
+            value = 1.00 
+        combinations_dic[i] = round(value,2)
+
+    for i in range(N):
+        for j in range(i+1, N):
+            matrix[i][j] = combinations_dic[(i,j)]
+            matrix[j][i] = matrix[i][j]
+    
     return matrix
+
 
 def write_to_file(filename, data):
     with open(f"{filename}", 'w') as file:
@@ -116,8 +133,8 @@ def generateInstance(data):
 
 if "__main__" == __name__:
     # Example usage
-    D = 2  # Number of departments
-    N = 8  # Total number of members
+    D = 4  # Number of departments
+    N = 80  # Total number of members
     required_members_per_department = generate_members_for_department(D, N, 0)
     print(f"n: {required_members_per_department}")
     

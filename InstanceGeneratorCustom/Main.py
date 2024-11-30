@@ -18,8 +18,8 @@ def run():
     return 0
 
 def customGenerator():
-    D = [ 3, 3, 3, 3]
-    N = [32,34,36,38]
+    D = [ 2,  3,  3,  3,  3,  3,  3,  3] 
+    N = [10, 20, 30, 32, 34, 36, 38, 40]
     for i in range(len(D)):
         data = {
             "D": D[i],
@@ -30,5 +30,5 @@ def customGenerator():
         generateInstance(data)
 
 if __name__ == '__main__':
-    sys.exit(run())
-    # sys.exit(customGenerator())
+    # sys.exit(run())
+    sys.exit(customGenerator())
