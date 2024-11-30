@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <cmath>
 #include <numeric>
+#include <chrono>
 
 using namespace std;
 
@@ -13,7 +14,7 @@ vector<vector<double>> m;
 vector<bool> candidates;
 
 
-bool is_valid_candidate(int candidate, const vector<bool> commission) {
+bool is_valid_candidate(int candidate, const vector<bool>& commission) {
     int department = d[candidate];
     int department_count = 0;
     for (int i = 0; i < N; ++i) {
@@ -147,6 +148,11 @@ int main() {
             }
         }
         
+        auto start = chrono::high_resolution_clock::now();  // Start timer
         solve_greedy();
+        auto end = chrono::high_resolution_clock::now();    // End timer
+        chrono::duration<double> elapsed = end - start;     // Elapsed time
+        
+        cout << "Time taken: " << elapsed.count() << " seconds." << endl;
     }
 }

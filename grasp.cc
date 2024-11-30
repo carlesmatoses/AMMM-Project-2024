@@ -4,6 +4,7 @@
 #include <cmath>
 #include <numeric>
 #include <cstdlib>
+#include <chrono>
 
 using namespace std;
 
@@ -217,6 +218,11 @@ int main() {
             }
         }
         
+        auto start = chrono::high_resolution_clock::now();  // Start timer
         solveGrasp();
+        auto end = chrono::high_resolution_clock::now();    // End timer
+        chrono::duration<double> elapsed = end - start;     // Elapsed time
+        
+        cout << "Time taken: " << elapsed.count() << " seconds." << endl;
     }
 }
