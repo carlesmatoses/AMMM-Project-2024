@@ -1,6 +1,6 @@
-D = 8; // number of departments
-N = 400; // number of members
-n = 6; // required members per group, if(0):random(1,N//D) 
+D = 4; // number of departments
+N = 200; // number of members
+n = 5; // required members per group, if(0):random(1,N//D) 
             // n = 0;
             // n = 4;
 

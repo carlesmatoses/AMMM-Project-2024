@@ -30,5 +30,5 @@ def customGenerator():
         generateInstance(data)
 
 if __name__ == '__main__':
-    # sys.exit(run())
-    sys.exit(customGenerator())
+    sys.exit(run())
+    # sys.exit(customGenerator())
