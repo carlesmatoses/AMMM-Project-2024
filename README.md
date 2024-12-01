@@ -25,4 +25,11 @@ For i in miembros:
 
     SFinal = bestFit(S,SFinal)
 
-This works 8 out of 26 times, less than 30% of the time
+We care about: 
+- The times we get a solution
+- The closest solutions to perfect
+- The time rquired to find a solution
+
+Successes: 0  out of 100 executions with alpha = 1.0
+Successes: 42 out of 100 executions with alpha = 0.7
+Successes: 2  out of 100 executions with alpha = 0.2
