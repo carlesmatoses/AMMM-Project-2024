@@ -1,7 +1,5 @@
 main {
-  for (var i = 1; i <= 8; i++) {
-    writeln("Starting iteration " + i);
-    var dataFile = "project." + i + ".dat";
+    var dataFile = "project.1.dat";
     var src = new IloOplModelSource("project.mod");
     var def = new IloOplModelDefinition(src);
     var cplex = new IloCplex();
@@ -15,20 +13,9 @@ main {
       
       var com_size = 0;
       for (var p = 1; p <= model.D; p++) com_size += model.n[p];
-      var sol = 0;
-      for (var i = 1; i <= model.N; i++) {
-        for (var j = i + 1; j <= model.N; j++) {
-          if (model.x[i][j] == 1) {
-            writeln(i + " " + j + " " + model.m[i][j]);
-            sol +=  model.m[i][j];
-          }
-        }
-      }
-      writeln(com_size);
-      sol /= (com_size*(com_size - 1)/2); 
-      writeln(sol);
   
-      writeln("Objective " + (cplex.getObjValue() - com_size)/(com_size*(com_size - 1)) + "%");
+      var num_pairs = com_size*(com_size - 1)/2;
+      writeln("Objective " + cplex.getObjValue()/num_pairs);
       
       var commission = "";
       for (var i = 1; i <= model.N; i++) {
@@ -47,5 +34,4 @@ main {
     src.end();
     
     writeln("finish");
-  }
 };
