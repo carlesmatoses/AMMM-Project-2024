@@ -55,7 +55,6 @@ class Solver_GRASP(_Solver):
 
         # for all members
         for iteration in range(0, self.numMembers):
-            # alpha = 0 if iteration == 1 else 0.7 #self.config.alpha
             
             # compute feasible assignments
             candidateList = solution.findFeasibleAssignments()
@@ -65,7 +64,7 @@ class Solver_GRASP(_Solver):
                 break
             
             # select an assignment
-            alpha = 0.7
+            alpha = self.config.alpha
             candidate = self._selectCandidate(candidateList, alpha)
 
             # assign the current task to the CPU that resulted in a minimum highest load

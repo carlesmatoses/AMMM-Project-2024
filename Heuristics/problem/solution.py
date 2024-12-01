@@ -138,7 +138,7 @@ class Solution(_Solution):
   
     def findFeasibleAssignments(self):
         feasibleAssignments:list[Assignment] = []
-        for member in range(len(self.members)):
+        for member in range(len(self.members)): # TODO: this can be speeded up with keeping a list of infeasible members
             feasible = self.assign(member)
             if not feasible: continue
             assignment = Assignment(member, self.members[member].getWeight())

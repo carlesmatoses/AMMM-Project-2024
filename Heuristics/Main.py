@@ -61,6 +61,7 @@ class Main:
                 solution = solver.solve(solution=initialSolution)
                 print(solution)
                 solution.saveToFile(self.config.solutionFile)
+                return solution
             else:
                 print('Instance is infeasible.')
                 solution = instance.createSolution()
@@ -92,4 +93,14 @@ if __name__ == '__main__':
         print(config)
         print(inputData)
     main = Main(config)
-    sys.exit(main.run(inputData))
+    
+    # DEBUG: test 100 executions:
+    alpha = config.alpha
+    successes = 0
+    for i in range(100):
+        s = main.run(inputData)
+        if s.isFeasible():
+            successes += 1
+        print(f"test: {i}")
+    print(f"Successes: {successes} out of 100 executions with alpha = {alpha}")
+    # sys.exit(main.run(inputData))
