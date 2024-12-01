@@ -38,15 +38,15 @@ subject to {
     //>>>>>>>>>>>>>>>>
     
 	// xij = 1 iff ci = 1 and cj = 1
-	forall(i in 1..N, j in 1..N) x[i][j] <= c[i];
-	forall(i in 1..N, j in 1..N) x[i][j] <= c[j];
-	forall(i in 1..N, j in 1..N) x[i][j] >= c[i] + c[j] - 1;
+	forall(i,j in 1..N) x[i][j] <= c[i];
+	forall(i,j in 1..N) x[i][j] <= c[j];
+	forall(i,j in 1..N) x[i][j] >= c[i] + c[j] - 1;
 	
 	// mij = 0 ==> ci = 0 or cj = 0
-	forall(i in 1..N, j in 1..N : m[i][j] == 0) c[i] + c[j] <= 1;
+	forall(i,j in 1..N : m[i][j] == 0) c[i] + c[j] <= 1;
 	
 	// ci and cj and mij < 0.15 ==> exists k s.t. mik > 0.85 and mjk > 0.85
-	forall(i in 1..N, j in 1..N : m[i][j] < 0.15)
+	forall(i,j in 1..N : m[i][j] < 0.15)
 	  (1 - x[i][j]) + sum(k in 1..N : m[i][k] > 0.85 && m[j][k] > 0.85) c[k] >= 1; 
 	
 	// There are np members of department p in the commission
