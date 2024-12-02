@@ -1,0 +1,14 @@
+Best ALPHA values for each instance:
+Instance: input/input_instance_7.txt, Best ALPHA: 0.3, Best Objective Value: 0.703333
+Instance: input/input_instance_6.txt, Best ALPHA: 0.1, Best Objective Value: 0.714444
+Instance: input/input_instance_4.txt, Best ALPHA: 0.1, Best Objective Value: 0.718889
+Instance: input/input_instance_5.txt, Best ALPHA: 0.1, Best Objective Value: 0.774444
+Instance: input/input_instance_1.txt, Best ALPHA: 0.2, Best Objective Value: 0.727778
+Instance: input/input_instance_2.txt, Best ALPHA: 0.1, Best Objective Value: 0.736667
+Instance: input/input_instance_3.txt, Best ALPHA: 0.1, Best Objective Value: 0.7
+Instance: input/input_instance_8.txt, Best ALPHA: 0.1, Best Objective Value: 0.716667
+Instance: input/input_instance_9.txt, Best ALPHA: 0.2, Best Objective Value: 0.751111
+Instance: input/input_instance_10.txt, Best ALPHA: 0.1, Best Objective Value: 0.721111
+
+Average Best ALPHA: 0.14
+Average Best Objective Value: 0.73
