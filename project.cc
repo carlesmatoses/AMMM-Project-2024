@@ -245,6 +245,8 @@ vector<bool> constructGraspSolution() {
         ++solutionSize;
     }
     
+    if (not isValidSolution(solution)) return vector<bool>(N, false);
+    
     return solution;
 }
 
