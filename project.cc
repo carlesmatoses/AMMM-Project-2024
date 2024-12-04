@@ -138,12 +138,18 @@ vector<pair<int, double>> getCandidateScores(const vector<bool>& solution, vecto
 }
 
 bool isValidSolution(const vector<bool>& solution) {
+    vector<int> dep_counts = n;
     for (int i = 0; i < N; ++i) {
         if (not solution[i]) continue;
+        --dep_counts[d[i]];
         for (int j = i + 1; j < N; ++j) {
             if (not solution[j]) continue;
+            if (m[i][j] == 0) return false;
             if (m[i][j] < 0.15 and not existsIntermediate(i, j, solution)) return false;
         }
+    }
+    for (int count : dep_counts){
+        if (count != 0) return false;
     }
     return true;
 }
@@ -184,13 +190,15 @@ void exploreExchange(const vector<bool>& current_solution, double& current_best_
             neighbor[i] = false;  // Remove member i from the commission
             
             for (int j = 0; j < N; ++j) {
-                if (not current_solution[j] and is_valid_candidate(j, neighbor)) {
+                if (not current_solution[j]/* and is_valid_candidate(j, neighbor)*/) {
                     neighbor[j] = true;  // Add candidate j to the commission
-                    double comp = compute_average_compatibility(neighbor);
-                    if (comp > best_comp) {
-                        bestNeighbor = neighbor;
-                        best_comp = comp;
-                        if (SEARCH_POLICY == "FirstImprovement") return;
+                    if (isValidSolution(neighbor)) {
+                        double comp = compute_average_compatibility(neighbor);
+                        if (comp > best_comp) {
+                            bestNeighbor = neighbor;
+                            best_comp = comp;
+                            if (SEARCH_POLICY == "FirstImprovement") return;
+                        }
                     }
                     neighbor[j] = false;  // Undo the change for next candidate
                 }
