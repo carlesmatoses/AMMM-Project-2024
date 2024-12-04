@@ -33,3 +33,19 @@ We care about:
 Successes: 0  out of 100 executions with alpha = 1.0
 Successes: 42 out of 100 executions with alpha = 0.7
 Successes: 2  out of 100 executions with alpha = 0.2
+
+# Document
+Ordenar document com:
+- Statement
+- ILP formulation
+- Metaheuristics
+  - isFeasible() for member or for set
+  - w(i,S)
+    - basic one,
+    - improved one (relaxing)
+  - Greedy constructive algorithm
+    - generate a list of feasible members
+    - select the one with more weight
+    - check if it is correct
+  - local search algorithm
+  - GRASP algorithm
