@@ -11,8 +11,9 @@ using namespace std;
 const string SEARCH_POLICY = "FirstImprovement";
 
 // GRASP Constans
+const int MAX_TIME = 60;
 const int MAX_ITER = 1000;
-const double ALPHA = 0.3;
+const double ALPHA = 0.2;
 
 int D, N;
 vector<int> n, d;
@@ -69,6 +70,19 @@ bool existsIntermediate(int i, int j, const vector<bool>& commission) {
     return false;
 }
 
+bool isIntermediate(int k, const vector<bool>& commission) {
+    for (int i = 0; i < N; ++i) {
+        if (commission[i] and m[i][k] > 0.85) {
+            for (int j = i + 1; j < N; ++j) {
+                if (commission[j] and m[j][k] > 0.85) {
+                    if (m[i][j] < 0.15) return true;
+                }
+            }
+        }
+    }
+    return false;
+}
+
 bool is_valid_candidate(int candidate, const vector<bool>& commission) {
     int department = d[candidate];
     int department_count = 0;
@@ -78,54 +92,30 @@ bool is_valid_candidate(int candidate, const vector<bool>& commission) {
     if (department_count >= n[department]) return false;
 
     for (int i = 0; i < N; ++i) {
-        if (commission[i] and m[candidate][i] == 0) return false;
-        if (commission[i] and m[candidate][i] < 0.15) {
-            if (not existsIntermediate(candidate, i, commission)) return false;
-        }
+        if (not commission[i]) continue;
+        if (m[candidate][i] == 0) return false;
     }
     return true;
 }
 
-double compute_candidate_compatibility(int candidate, const vector<bool>& commission) {
-    double compatibility = 0.0;
-    for (int i = 0; i < N; ++i) {
-        if (commission[i]) {
-            compatibility += m[candidate][i];
-        }
-    }
-    return compatibility;
-}
-
 double compute_candidate_score(int candidate, const vector<bool>& commission) {
     double score = 0.0;
-    vector<int> dep_counts = n;
-    --dep_counts[d[candidate]];
-    priority_queue<pair<double, int>> q;
+    if (isIntermediate(candidate, commission)) score += 2;
     for (int i = 0; i < N; ++i) {
-        double compatibility_i = m[candidate][i];
-        if (compatibility_i > 0.85) compatibility_i *= 4;
-        else if (compatibility_i >= 0.15 or existsIntermediate(candidate, i, commission)) {
-            compatibility_i *= 2;
-        }
-        else if (compatibility_i == 0) compatibility_i = -1;
+        if (i == candidate) continue;
         if (commission[i]) {
-            score += compatibility_i;
-            --dep_counts[d[i]];
+            if (m[candidate][i] >= 0.15 or existsIntermediate(candidate, i, commission)) score += 2*m[candidate][i];
+            else score -= 2*N;
         }
-        else q.push({compatibility_i, i});
-    }
-    
-    while (not q.empty()) {
-        auto x = q.top(); q.pop();
-        double member_compatibility = x.first;
-        int member = x.second;
-        if (dep_counts[d[member]] > 0) {
-            score += member_compatibility;
-            --dep_counts[d[member]];
+        else {
+            vector<bool> hypothetical_commission = commission;
+            hypothetical_commission[candidate] = true;
+            if (is_valid_candidate(i, hypothetical_commission)) {
+                if (m[candidate][i] >= 0.15 or existsIntermediate(candidate, i, commission)) score += m[candidate][i];
+                else score -= N;
+            }
         }
-        else if (member_compatibility == -1) score += 0.5*member_compatibility;
     }
-    
     return score;
 }
 
@@ -145,6 +135,23 @@ vector<pair<int, double>> getCandidateScores(const vector<bool>& solution, vecto
         }
     }
     return candidateList;
+}
+
+bool isValidSolution(const vector<bool>& solution) {
+    vector<int> dep_counts = n;
+    for (int i = 0; i < N; ++i) {
+        if (not solution[i]) continue;
+        --dep_counts[d[i]];
+        for (int j = i + 1; j < N; ++j) {
+            if (not solution[j]) continue;
+            if (m[i][j] == 0) return false;
+            if (m[i][j] < 0.15 and not existsIntermediate(i, j, solution)) return false;
+        }
+    }
+    for (int count : dep_counts){
+        if (count != 0) return false;
+    }
+    return true;
 }
 
 vector<bool> solveGreedy() {
@@ -168,6 +175,8 @@ vector<bool> solveGreedy() {
         ++solutionSize;
     }
     
+    if (not isValidSolution(solution)) return vector<bool>(N, false);
+    
     return solution;
 }
 
@@ -181,13 +190,15 @@ void exploreExchange(const vector<bool>& current_solution, double& current_best_
             neighbor[i] = false;  // Remove member i from the commission
             
             for (int j = 0; j < N; ++j) {
-                if (not current_solution[j] and is_valid_candidate(j, neighbor)) {
+                if (not current_solution[j]/* and is_valid_candidate(j, neighbor)*/) {
                     neighbor[j] = true;  // Add candidate j to the commission
-                    double comp = compute_average_compatibility(neighbor);
-                    if (comp > best_comp) {
-                        bestNeighbor = neighbor;
-                        best_comp = comp;
-                        if (SEARCH_POLICY == "FirstImprovement") return;
+                    if (isValidSolution(neighbor)) {
+                        double comp = compute_average_compatibility(neighbor);
+                        if (comp > best_comp) {
+                            bestNeighbor = neighbor;
+                            best_comp = comp;
+                            if (SEARCH_POLICY == "FirstImprovement") return;
+                        }
                     }
                     neighbor[j] = false;  // Undo the change for next candidate
                 }
@@ -242,6 +253,8 @@ vector<bool> constructGraspSolution() {
         ++solutionSize;
     }
     
+    if (not isValidSolution(solution)) return vector<bool>(N, false);
+    
     return solution;
 }
 
@@ -256,7 +269,7 @@ void solve_with_greedy() {
     
     cout << "GREEDY RESULTS:" << endl;
     cout << "Average compatibility: " << compatibility << endl;
-    cout << "COMMISSION: ";
+    cout << "GREEDY COMMISSION: ";
     bool first = true;
     for (int i = 0; i < N; ++i) {
         if (solution[i]) {
@@ -265,6 +278,7 @@ void solve_with_greedy() {
             first = false;
         }
     }
+    if (first) cout << "Commission not found";
     cout << endl;
     
     cout << "Time taken: " << elapsed.count() << " seconds." << endl;
@@ -279,7 +293,7 @@ void solve_with_greedy_and_local_search() {
     
     cout << "GREEDY WITH LOCAL SEARCH RESULTS:" << endl;
     cout << "Average compatibility: " << compatibility << endl;
-    cout << "COMMISSION: ";
+    cout << "GREEDY WITH LOCAL SEARCH COMMISSION: ";
     bool first = true;
     for (int i = 0; i < N; ++i) {
         if (solution[i]) {
@@ -294,12 +308,20 @@ void solve_with_greedy_and_local_search() {
 }
 
 void solve_with_grasp() {
+    
+    chrono::duration<double> max_duration(MAX_TIME);
+    
     auto start = chrono::high_resolution_clock::now();  // Start timer
     
     vector<bool> bestSolution(N, false);
     double bestCompatibility = 0;
     
     for (int k = 0; k < MAX_ITER; ++k) {
+        
+        auto actual = chrono::high_resolution_clock::now();           // End timer
+        chrono::duration<double> actual_elapsed = actual - start;     // Elapsed time
+        if (actual_elapsed > max_duration) break;
+        
         vector<bool> solution = constructGraspSolution();
         double compatibility = local_search(solution);
         
@@ -312,9 +334,9 @@ void solve_with_grasp() {
     auto end = chrono::high_resolution_clock::now();    // End timer
     chrono::duration<double> elapsed = end - start;     // Elapsed time
     
-    cout << "GREEDY WITH LOCAL SEARCH RESULTS:" << endl;
+    cout << "GRASP RESULTS:" << endl;
     cout << "Average compatibility: " << bestCompatibility << endl;
-    cout << "COMMISSION: ";
+    cout << "GRASP COMMISSION: ";
     bool first = true;
     for (int i = 0; i < N; ++i) {
         if (bestSolution[i]) {
