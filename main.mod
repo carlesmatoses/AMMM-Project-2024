@@ -1,5 +1,5 @@
 main {
-    var dataFile = "project.1.dat";
+    var dataFile = "cplex_input.dat";
     var src = new IloOplModelSource("project.mod");
     var def = new IloOplModelDefinition(src);
     var cplex = new IloCplex();
@@ -9,6 +9,7 @@ main {
     model.generate();
     
     cplex.epgap=0.01;
+    cplex.tilim = 30*60;
     if (cplex.solve()) {
       
       var com_size = 0;
