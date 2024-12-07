@@ -8,13 +8,8 @@
 #include <map>
 #include <utility>
 #include <iomanip>
+#include <fstream>
 using namespace std;
-
-int D = 5; 
-int N = 200;
-int n = 4; 
-
-char out[] = "examples/project.dat";
 
 vector<int> generate_department_for_member(int D, int N) {
     vector<int> members;
@@ -45,61 +40,77 @@ vector<vector<double>> generate_matrix(int N) {
         combinations_dic[comb] = 0.0;
     }
 
-    map<int, int> percent = {{0, 5}, {14, 5}, {1, 10}};
+    // Fill the matrix with random values for demonstration purposes
     random_device rd;
     mt19937 gen(rd());
     uniform_real_distribution<> dis(0.0, 1.0);
-
-    for (auto& comb : combinations_dic) {
-        double value = round(dis(gen) * 100.0) / 100.0;
-        if (value < percent[0] / 100.0) {
-            value = 0.00;
-        } else if (value < percent[0] / 100.0 + percent[14] / 100.0) {
-            value = 0.14;
-        } else if (value > 1 - percent[1] / 100.0) {
-            value = 1.00;
-        }
-        comb.second = round(value * 100.0) / 100.0;
-    }
-
-    for (int i = 0; i < N; ++i) {
-        for (int j = i + 1; j < N; ++j) {
-            matrix[i][j] = combinations_dic[make_pair(i, j)];
-            matrix[j][i] = matrix[i][j];
-        }
+    for (const auto& comb : combinations_list) {
+        double value = dis(gen);
+        matrix[comb.first][comb.second] = value;
+        matrix[comb.second][comb.first] = value;
     }
 
     return matrix;
 }
 
-int main() {
-    vector<int> n_result            = vector<int>(D, n);
-    vector<int> d_result            = generate_department_for_member(D,N); 
-    vector<vector<double>> m_result = generate_matrix(N);
+void save_instance(const string& filename, int D, int N, int n, const vector<int>& departments, const vector<vector<double>>& matrix) {
+    ofstream outfile(filename);
+    outfile << "D = " << D << ";\n";
 
-    cout << D << endl;
-    cout << " ";
+    outfile << "n = [ ";
     for (int i = 0; i < D; ++i) {
-        cout << n_result[i] << " ";
+        outfile << n << " ";
     }
-    cout << endl;
+    outfile << "];\n";
 
-    cout << "" << endl;
-    cout << N << endl;
-    cout << " ";
-    for (int i = 0; i < N; ++i) {
-        cout << d_result[i] << " ";
+    outfile << "N = " << N << ";\n";
+
+    outfile << "d = [";
+    for (int dep : departments) {
+        outfile << dep << " ";
     }
-    cout << endl;
+    outfile << "];\n";
 
-    cout << "" << endl;
-    for (int i = 0; i < N; ++i) {
-        cout << " ";
-        for (int j = 0; j < N; ++j) {
-            cout << fixed << setprecision(2) << m_result[i][j] << " ";
+    outfile << "m = [\n";
+    for (const auto& row : matrix) {
+        outfile << "[";
+        for (double val : row) {
+            outfile << fixed << setprecision(2) << val << " ";
         }
-        cout << endl;
+        outfile << "]\n";
+    }
+    outfile << "];\n";
+
+    outfile.close();
+}
+
+int main() {
+    int min_value = 8;
+    int max_value = 100;
+    vector<int> N_values(max_value - min_value + 1);
+    iota(N_values.begin(), N_values.end(), min_value);
+    vector<int> D_values = {2}; // Example values
+    vector<int> n_values = {1}; // Example values
+
+    int instance_count = 0;
+    for (int D : D_values) {
+        for (int n : n_values) {
+            for (int N : N_values) {
+
+                if (D * n > N) {
+                    continue;
+                }
+
+                vector<int> departments = generate_department_for_member(D, N);
+                vector<vector<double>> matrix = generate_matrix(N);
+                string filename = "instances/D-" + to_string(D) + "_n-" + to_string(n) + "_N-" + to_string(N)  + ".dat";
+                save_instance(filename, D, N, n, departments, matrix);
+                instance_count++;
+            }
+        }
     }
 
     return 0;
 }
+
+// 1. for D = 2 and n = 2, generate instances for N = 8, 9, 10, ..., 200
