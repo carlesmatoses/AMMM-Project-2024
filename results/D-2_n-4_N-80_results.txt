@@ -1,0 +1,43 @@
+
+<<< setup
+
+
+<<< generate
+
+Version identifier: 22.1.1.0 | 2022-11-27 | 9160aff4d
+Tried aggregator 2 times.
+MIP Presolve eliminated 841 rows and 186 columns.
+MIP Presolve modified 188 coefficients.
+Aggregator did 80 substitutions.
+Reduced MIP has 19189 rows, 6214 columns, and 45402 nonzeros.
+Reduced MIP has 6214 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0,09 sec. (136,96 ticks)
+Found incumbent of value 18,460000 after 0,19 sec. (260,25 ticks)
+Probing time = 0,05 sec. (44,18 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+MIP Presolve eliminated 40 rows and 10 columns.
+Reduced MIP has 19149 rows, 6204 columns, and 45312 nonzeros.
+Reduced MIP has 6204 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0,11 sec. (138,63 ticks)
+Probing time = 0,05 sec. (35,93 ticks)
+Clique table members: 28910.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 12 threads.
+Root relaxation solution time = 0,34 sec. (378,01 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                           18,4600     1589,7600              --- 
+*     0+    0                           19,1400     1589,7600              --- 
+*     0+    0                           19,4100     1589,7600              --- 
+*     0+    0                           20,0000     1589,7600              --- 
+      0     0      158,9760  3147       20,0000      158,9760     4209  694,88%
+      0     0      157,8386  3781       20,0000    Cuts: 1860     5645  689,19%
+      0     0      157,0900  3961       20,0000    Cuts: 2100     6998  685,45%
+      0     0      156,5188  4124       20,0000    Cuts: 1264     7660  682,59%
+      0     0      156,1961  4214       20,0000 ZeroHalf: 1065     8181  680,98%
+      0     0      156,0192  4511       20,0000 ZeroHalf: 820     8769  680,10%
+Detecting symmetries...

@@ -1,0 +1,15 @@
+
+<<< setup
+
+
+<<< generate
+
+Version identifier: 22.1.1.0 | 2022-11-27 | 9160aff4d
+Tried aggregator 2 times.
+MIP Presolve eliminated 1027 rows and 226 columns.
+MIP Presolve modified 228 coefficients.
+Aggregator did 96 substitutions.
+Reduced MIP has 27887 rows, 8990 columns, and 66092 nonzeros.
+Reduced MIP has 8990 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0,16 sec. (221,78 ticks)
+Found incumbent of value 15,410000 after 0,30 sec. (419,40 ticks)

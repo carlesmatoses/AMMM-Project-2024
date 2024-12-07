@@ -1,0 +1,72 @@
+
+<<< setup
+
+
+<<< generate
+
+Version identifier: 22.1.1.0 | 2022-11-27 | 9160aff4d
+Tried aggregator 2 times.
+MIP Presolve eliminated 132 rows and 24 columns.
+MIP Presolve modified 42 coefficients.
+Aggregator did 21 substitutions.
+Reduced MIP has 1238 rows, 417 columns, and 2903 nonzeros.
+Reduced MIP has 417 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0,00 sec. (4,49 ticks)
+Found incumbent of value 4,490000 after 0,02 sec. (8,53 ticks)
+Probing fixed 4 vars, tightened 0 bounds.
+Probing time = 0,00 sec. (14,70 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+MIP Presolve eliminated 18 rows and 5 columns.
+Reduced MIP has 1220 rows, 412 columns, and 2862 nonzeros.
+Reduced MIP has 412 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0,02 sec. (4,51 ticks)
+Probing time = 0,00 sec. (7,86 ticks)
+Clique table members: 2070.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 12 threads.
+Root relaxation solution time = 0,02 sec. (13,06 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                            4,4900      105,3100              --- 
+*     0+    0                            4,6100      105,3100              --- 
+*     0+    0                            4,9700      105,3100              --- 
+      0     0       19,5476   217        4,9700       19,5476      452  293,31%
+      0     0       17,8992   228        4,9700     Cuts: 146      592  260,15%
+*     0+    0                            5,2300       17,8992           242,24%
+      0     0       16,9312   238        5,2300     Cuts: 108      716  126,80%
+      0     0       16,5168   273        5,2300 ZeroHalf: 105      865  126,80%
+      0     0       16,3966   273        5,2300     Cuts: 111      920  126,80%
+      0     0        cutoff              5,2300        5,2300      920    0,00%
+Elapsed time = 0,19 sec. (218,65 ticks, tree = 0,01 MB, solutions = 4)
+
+Clique cuts applied:  10
+Implied bound cuts applied:  1
+Zero-half cuts applied:  152
+Lift and project cuts applied:  1
+Gomory fractional cuts applied:  4
+
+Root node processing (before b&c):
+  Real time             =    0,20 sec. (218,69 ticks)
+Parallel b&c, 12 threads:
+  Real time             =    0,00 sec. (0,00 ticks)
+  Sync time (average)   =    0,00 sec.
+  Wait time (average)   =    0,00 sec.
+                          ------------
+Total (root+branch&cut) =    0,20 sec. (218,69 ticks)
+
+<<< solve
+
+
+OBJECTIVE: 5.23
+OBJECTIVE: 0.871666667
+Commission: 2 8 18 19
+
+<<< post process
+
+
+<<< done
+

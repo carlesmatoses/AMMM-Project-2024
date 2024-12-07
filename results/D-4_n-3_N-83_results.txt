@@ -1,0 +1,27 @@
+
+<<< setup
+
+
+<<< generate
+
+Version identifier: 22.1.1.0 | 2022-11-27 | 9160aff4d
+Tried aggregator 2 times.
+MIP Presolve eliminated 951 rows and 212 columns.
+MIP Presolve modified 198 coefficients.
+Aggregator did 83 substitutions.
+Reduced MIP has 20631 rows, 6677 columns, and 48837 nonzeros.
+Reduced MIP has 6677 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0,11 sec. (153,12 ticks)
+Found incumbent of value 37,950000 after 0,22 sec. (288,93 ticks)
+Probing time = 0,05 sec. (45,12 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+MIP Presolve eliminated 40 rows and 10 columns.
+Reduced MIP has 20591 rows, 6667 columns, and 48747 nonzeros.
+Reduced MIP has 6667 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0,14 sec. (152,66 ticks)
+Probing time = 0,05 sec. (32,99 ticks)
+Clique table members: 31089.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 12 threads.

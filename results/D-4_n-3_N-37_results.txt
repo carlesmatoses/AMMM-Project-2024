@@ -1,0 +1,88 @@
+
+<<< setup
+
+
+<<< generate
+
+Version identifier: 22.1.1.0 | 2022-11-27 | 9160aff4d
+Tried aggregator 2 times.
+MIP Presolve eliminated 406 rows and 90 columns.
+MIP Presolve modified 82 coefficients.
+Aggregator did 37 substitutions.
+Reduced MIP has 3874 rows, 1279 columns, and 9063 nonzeros.
+Reduced MIP has 1279 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0,02 sec. (17,87 ticks)
+Found incumbent of value 36,410000 after 0,03 sec. (33,45 ticks)
+Probing time = 0,01 sec. (4,05 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+Reduced MIP has 3874 rows, 1279 columns, and 9063 nonzeros.
+Reduced MIP has 1279 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0,02 sec. (13,51 ticks)
+Probing time = 0,02 sec. (3,98 ticks)
+Clique table members: 6000.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 12 threads.
+Root relaxation solution time = 0,06 sec. (59,03 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                           36,4100      325,7700           794,73%
+      0     0      103,3433   658       36,4100      103,3433     1227  183,83%
+*     0+    0                           36,4200      103,3433           183,75%
+*     0+    0                           40,0600      103,3433           157,97%
+      0     0      102,9226   766       40,0600     Cuts: 290     1498  155,24%
+      0     0      102,0846   807       40,0600     Cuts: 176     1653  154,83%
+*     0+    0                           40,9100      102,0846           149,53%
+      0     0      102,0601   839       40,9100     Cuts: 119     1706  149,47%
+      0     0      101,8847   828       40,9100 ZeroHalf: 114     1792  149,05%
+      0     0      101,8006   797       40,9100 ZeroHalf: 112     1857  148,84%
+Detecting symmetries...
+      0     0      101,8006   817       40,9100 ZeroHalf: 122     1883  148,84%
+      0     0      101,8006   824       40,9100  ZeroHalf: 30     1908  126,92%
+Detecting symmetries...
+      0     2      101,8006   822       40,9100       92,8338     1908  126,92%
+Elapsed time = 2,77 sec. (1526,68 ticks, tree = 0,02 MB, solutions = 4)
+     11    11       47,0250   246       40,9100       92,8338     4135  126,92%
+    142    30       84,6325   567       40,9100       92,8338    23426  126,92%
+    306   129       50,2667   341       40,9100       87,8573    46091  114,76%
+    398   188       63,4812   503       40,9100       87,8573    73348  114,76%
+*   478   201      integral     0       41,0800       87,8573    75038  113,87%
+    599   278       47,4500   263       41,0800       66,8686    97561   62,78%
+*   772   313      integral     0       41,5800       65,8387   109321   58,34%
+    780   342        cutoff             41,5800       65,8387   116038   58,34%
+   1091   427       44,4700   244       41,5800       61,7267   144070   48,45%
+*  1266   496      integral     0       41,5900       60,1250   171098   44,57%
+   1305   501        cutoff             41,5900       60,1250   174451   44,57%
+   1636   593        cutoff             41,5900       57,1756   206770   37,47%
+   3283   795        cutoff             41,5900       49,1500   326307   18,18%
+Elapsed time = 6,50 sec. (4650,94 ticks, tree = 1,28 MB, solutions = 7)
+*  5099    73      integral     0       41,7300       42,7000   412420    2,32%
+
+Implied bound cuts applied:  269
+Zero-half cuts applied:  316
+Gomory fractional cuts applied:  3
+
+Root node processing (before b&c):
+  Real time             =    2,74 sec. (1525,20 ticks)
+Parallel b&c, 12 threads:
+  Real time             =    4,51 sec. (3748,27 ticks)
+  Sync time (average)   =    0,90 sec.
+  Wait time (average)   =    0,00 sec.
+                          ------------
+Total (root+branch&cut) =    7,25 sec. (5273,46 ticks)
+
+<<< solve
+
+
+OBJECTIVE: 41.73
+OBJECTIVE: 0.632272727
+Commission: 1 5 8 11 13 14 20 21 23 28 36 37
+
+<<< post process
+
+
+<<< done
+

@@ -1,0 +1,78 @@
+
+<<< setup
+
+
+<<< generate
+
+Version identifier: 22.1.1.0 | 2022-11-27 | 9160aff4d
+Tried aggregator 2 times.
+MIP Presolve eliminated 241 rows and 50 columns.
+MIP Presolve modified 59 coefficients.
+Aggregator did 28 substitutions.
+Reduced MIP has 2199 rows, 734 columns, and 5143 nonzeros.
+Reduced MIP has 734 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0,00 sec. (9,01 ticks)
+Found incumbent of value 4,080000 after 0,02 sec. (16,90 ticks)
+Probing fixed 6 vars, tightened 0 bounds.
+Probing time = 0,02 sec. (30,11 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+MIP Presolve eliminated 21 rows and 6 columns.
+Reduced MIP has 2178 rows, 728 columns, and 5095 nonzeros.
+Reduced MIP has 728 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0,00 sec. (6,73 ticks)
+Probing time = 0,00 sec. (4,18 ticks)
+Clique table members: 3425.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 12 threads.
+Root relaxation solution time = 0,02 sec. (16,77 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                            4,0800      189,3200              --- 
+*     0+    0                            4,3500      189,3200              --- 
+      0     0       27,0457   378        4,3500       27,0457      509  521,74%
+*     0+    0                            5,0700       27,0457           433,45%
+      0     0       25,4357   451        5,0700     Cuts: 316      842  399,01%
+      0     0       24,9350   492        5,0700     Cuts: 148      996  391,81%
+      0     0       24,7039   464        5,0700 ZeroHalf: 156     1130  387,26%
+      0     0       24,6389   466        5,0700 ZeroHalf: 154     1189  385,97%
+      0     0       24,4152   513        5,0700 ZeroHalf: 213     1309  381,56%
+Detecting symmetries...
+      0     0       24,2715   535        5,0700 ZeroHalf: 126     1382  358,97%
+      0     0       23,5325   492        5,0700     Cuts: 150     1550  358,97%
+      0     0       23,2554   507        5,0700 ZeroHalf: 245     1746  358,69%
+      0     0       23,1215   480        5,0700 ZeroHalf: 100     1851  356,05%
+*     0+    0                            5,2000       23,1215           344,64%
+      0     0       23,0491   547        5,2000 ZeroHalf: 139     1945  208,78%
+      0     0       22,2354   449        5,2000     Cuts: 137     2176  208,78%
+      0     0        cutoff              5,2000        5,2000     2353    0,00%
+Elapsed time = 0,50 sec. (479,20 ticks, tree = 0,01 MB, solutions = 4)
+
+Zero-half cuts applied:  636
+Lift and project cuts applied:  2
+Gomory fractional cuts applied:  6
+
+Root node processing (before b&c):
+  Real time             =    0,50 sec. (479,27 ticks)
+Parallel b&c, 12 threads:
+  Real time             =    0,00 sec. (0,00 ticks)
+  Sync time (average)   =    0,00 sec.
+  Wait time (average)   =    0,00 sec.
+                          ------------
+Total (root+branch&cut) =    0,50 sec. (479,27 ticks)
+
+<<< solve
+
+
+OBJECTIVE: 5.2
+OBJECTIVE: 0.866666667
+Commission: 2 6 15 16
+
+<<< post process
+
+
+<<< done
+

@@ -1,0 +1,43 @@
+
+<<< setup
+
+
+<<< generate
+
+Version identifier: 22.1.1.0 | 2022-11-27 | 9160aff4d
+Tried aggregator 2 times.
+MIP Presolve eliminated 1233 rows and 292 columns.
+MIP Presolve modified 201 coefficients.
+Aggregator did 86 substitutions.
+Reduced MIP has 21947 rows, 7104 columns, and 51601 nonzeros.
+Reduced MIP has 7104 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0,12 sec. (164,48 ticks)
+Found incumbent of value 9,430000 after 0,23 sec. (310,36 ticks)
+Probing time = 0,06 sec. (36,26 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+MIP Presolve eliminated 20 rows and 5 columns.
+Reduced MIP has 21927 rows, 7099 columns, and 51556 nonzeros.
+Reduced MIP has 7099 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0,12 sec. (163,51 ticks)
+Probing time = 0,02 sec. (11,84 ticks)
+Clique table members: 32924.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 12 threads.
+Root relaxation solution time = 0,38 sec. (405,95 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                            9,4300     1807,8000              --- 
+*     0+    0                           11,0300     1807,8000              --- 
+      0     0      126,1256  3595       11,0300      126,1256     4589     --- 
+      0     0      125,4700  3576       11,0300       Cuts: 2     4666     --- 
+      0     0      125,1085  3557       11,0300       Cuts: 2     4763     --- 
+      0     0      125,0529  3556       11,0300   ZeroHalf: 1     4795     --- 
+      0     0      125,0143  3551       11,0300   ZeroHalf: 1     4821     --- 
+      0     0      124,6407  3538       11,0300       Cuts: 3     4930     --- 
+Detecting symmetries...
+      0     0      124,6188  3536       11,0300   ZeroHalf: 1     4956     --- 
+      0     0      124,3345  3520       11,0300       Cuts: 4     5043     --- 

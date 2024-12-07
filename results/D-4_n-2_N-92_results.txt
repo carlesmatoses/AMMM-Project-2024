@@ -1,0 +1,45 @@
+
+<<< setup
+
+
+<<< generate
+
+Version identifier: 22.1.1.0 | 2022-11-27 | 9160aff4d
+Tried aggregator 2 times.
+MIP Presolve eliminated 822 rows and 172 columns.
+MIP Presolve modified 218 coefficients.
+Aggregator did 92 substitutions.
+Reduced MIP has 25702 rows, 8292 columns, and 61190 nonzeros.
+Reduced MIP has 8292 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0,17 sec. (198,56 ticks)
+Found incumbent of value 16,530000 after 0,36 sec. (376,35 ticks)
+Probing fixed 24 vars, tightened 0 bounds.
+Probing time = 0,22 sec. (99,06 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+MIP Presolve eliminated 102 rows and 27 columns.
+MIP Presolve modified 3 coefficients.
+Reduced MIP has 25600 rows, 8265 columns, and 60954 nonzeros.
+Reduced MIP has 8265 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0,16 sec. (198,83 ticks)
+Probing time = 0,23 sec. (40,93 ticks)
+Clique table members: 38809.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 12 threads.
+Root relaxation solution time = 1,50 sec. (514,25 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                           16,5300     2113,7800              --- 
+*     0+    0                           17,6700     2113,7800              --- 
+*     0+    0                           19,1500     2113,7800              --- 
+      0     0      183,8070  4180       19,1500      183,8070       11  859,83%
+      0     0      183,4448  4168       19,1500       Cuts: 7       75  857,94%
+      0     0      182,8300  4153       19,1500       Cuts: 6      140  854,73%
+      0     0      182,7852  4149       19,1500   ZeroHalf: 3      156  854,49%
+      0     0      182,7522  4145       19,1500   ZeroHalf: 4      177  854,32%
+      0     0      182,7191  4145       19,1500   ZeroHalf: 5      206  854,15%
+Detecting symmetries...
+      0     0      182,6896  4141       19,1500   ZeroHalf: 5      233  853,99%

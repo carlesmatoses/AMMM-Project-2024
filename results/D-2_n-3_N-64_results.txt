@@ -1,0 +1,43 @@
+
+<<< setup
+
+
+<<< generate
+
+Version identifier: 22.1.1.0 | 2022-11-27 | 9160aff4d
+Tried aggregator 2 times.
+MIP Presolve eliminated 634 rows and 136 columns.
+MIP Presolve modified 152 coefficients.
+Aggregator did 64 substitutions.
+Reduced MIP has 12220 rows, 3960 columns, and 28886 nonzeros.
+Reduced MIP has 3960 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0,06 sec. (76,55 ticks)
+Found incumbent of value 9,120000 after 0,12 sec. (149,24 ticks)
+Probing time = 0,03 sec. (27,51 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+MIP Presolve eliminated 20 rows and 5 columns.
+Reduced MIP has 12200 rows, 3955 columns, and 28841 nonzeros.
+Reduced MIP has 3955 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0,05 sec. (76,17 ticks)
+Probing time = 0,03 sec. (27,01 ticks)
+Clique table members: 18425.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 12 threads.
+Root relaxation solution time = 0,14 sec. (174,96 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                            9,1200     1020,4300              --- 
+*     0+    0                            9,2400     1020,4300              --- 
+*     0+    0                           10,3600     1020,4300              --- 
+      0     0       95,6653  2012       10,3600       95,6653     2716  823,41%
+      0     0       95,1734  1992       10,3600       Cuts: 4     2805  818,66%
+      0     0       94,7794  1977       10,3600       Cuts: 8     2894  814,86%
+      0     0       94,7181  1977       10,3600   ZeroHalf: 8     2939  814,27%
+      0     0       94,6284  1972       10,3600   ZeroHalf: 7     2989  813,40%
+      0     0       94,3267  1959       10,3600      Cuts: 12     3091  810,49%
+Detecting symmetries...
+      0     0       94,2685  1951       10,3600  ZeroHalf: 13     3159  809,93%

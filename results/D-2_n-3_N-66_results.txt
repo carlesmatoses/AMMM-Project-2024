@@ -1,0 +1,44 @@
+
+<<< setup
+
+
+<<< generate
+
+Version identifier: 22.1.1.0 | 2022-11-27 | 9160aff4d
+Tried aggregator 2 times.
+MIP Presolve eliminated 680 rows and 148 columns.
+MIP Presolve modified 146 coefficients.
+Aggregator did 66 substitutions.
+Reduced MIP has 12968 rows, 4208 columns, and 30622 nonzeros.
+Reduced MIP has 4208 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0,05 sec. (82,39 ticks)
+Found incumbent of value 8,370000 after 0,11 sec. (155,72 ticks)
+Probing time = 0,05 sec. (38,77 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+MIP Presolve eliminated 40 rows and 10 columns.
+Reduced MIP has 12928 rows, 4198 columns, and 30532 nonzeros.
+Reduced MIP has 4198 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0,06 sec. (82,11 ticks)
+Probing time = 0,03 sec. (22,07 ticks)
+Clique table members: 19513.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 12 threads.
+Root relaxation solution time = 0,16 sec. (173,47 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                            8,3700     1081,5700              --- 
+*     0+    0                            8,4300     1081,5700              --- 
+*     0+    0                            9,9400     1081,5700              --- 
+*     0+    0                           10,4500     1081,5700              --- 
+*     0+    0                           11,6000     1081,5700              --- 
+*     0+    0                           11,7300     1081,5700              --- 
+*     0+    0                           12,0500     1081,5700              --- 
+      0     0       98,3245  2137       12,0500       98,3245     2838  715,97%
+      0     0       97,8450  2118       12,0500      Cuts: 13     2902  711,99%
+      0     0       97,3886  2105       12,0500      Cuts: 10     2995  708,20%
+      0     0       97,3736  2103       12,0500  ZeroHalf: 11     3020  708,08%
+      0     0       97,3586  2103       12,0500   ZeroHalf: 9     3044  707,96%

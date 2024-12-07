@@ -1,0 +1,116 @@
+
+<<< setup
+
+
+<<< generate
+
+Version identifier: 22.1.1.0 | 2022-11-27 | 9160aff4d
+Tried aggregator 2 times.
+MIP Presolve eliminated 6841 rows and 1350 columns.
+MIP Presolve modified 2518 coefficients.
+Aggregator did 97 substitutions.
+Reduced MIP has 22707 rows, 8059 columns, and 52664 nonzeros.
+Reduced MIP has 8059 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0,16 sec. (227,66 ticks)
+Found incumbent of value 0,860000 after 0,24 sec. (336,16 ticks)
+Probing fixed 3950 vars, tightened 0 bounds.
+Probing time = 2,00 sec. (2410,01 ticks)
+Tried aggregator 1 time.
+MIP Presolve eliminated 10629 rows and 3955 columns.
+MIP Presolve modified 55 coefficients.
+Reduced MIP has 12078 rows, 4104 columns, and 28594 nonzeros.
+Reduced MIP has 4104 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0,05 sec. (67,85 ticks)
+Probing time = 0,02 sec. (14,06 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+Reduced MIP has 12078 rows, 4104 columns, and 28594 nonzeros.
+Reduced MIP has 4104 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0,03 sec. (47,69 ticks)
+Probing time = 0,03 sec. (14,02 ticks)
+Clique table members: 18476.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 12 threads.
+Root relaxation solution time = 0,17 sec. (248,12 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                            0,8600     1160,3100              --- 
+*     0+    0                            0,9400     1160,3100              --- 
+*     0+    0                            0,9800     1160,3100              --- 
+*     0+    0                            0,9900     1160,3100              --- 
+*     0+    0                            1,0000     1160,3100              --- 
+      0     0       23,7613  2065        1,0000       23,7613       12     --- 
+      0     0       22,9758  1993        1,0000      Cuts: 14      255     --- 
+      0     0       22,3763  1975        1,0000      Cuts: 18      598     --- 
+      0     0       22,1571  1955        1,0000  ZeroHalf: 18      786     --- 
+      0     0       22,0102  1933        1,0000  ZeroHalf: 13      956     --- 
+      0     0       21,5134  1900        1,0000       Cuts: 7     1222     --- 
+Detecting symmetries...
+      0     0       21,4087  1891        1,0000  ZeroHalf: 13     1384     --- 
+      0     0       20,9094  1836        1,0000      Cuts: 12     1651     --- 
+      0     0       20,8237  1831        1,0000  ZeroHalf: 13     1872     --- 
+      0     0       20,2901  1789        1,0000      Cuts: 12     2193     --- 
+      0     0       19,7033  1730        1,0000      Cuts: 10     2638     --- 
+      0     0       19,2474  1696        1,0000      Cuts: 12     2967     --- 
+      0     0       18,8356  1663        1,0000      Cuts: 14     3409     --- 
+      0     0       18,7999  1648        1,0000  ZeroHalf: 10     3588     --- 
+      0     0       18,7551  1654        1,0000   ZeroHalf: 7     3855     --- 
+      0     0       18,7188  1637        1,0000   ZeroHalf: 9     4094     --- 
+      0     0       18,6777  1641        1,0000  ZeroHalf: 12     4306     --- 
+      0     0       18,6371  1638        1,0000   ZeroHalf: 9     4524     --- 
+      0     0       18,6087  1637        1,0000   ZeroHalf: 7     4680     --- 
+      0     0       18,5469  1636        1,0000  ZeroHalf: 10     4997     --- 
+      0     0       18,5216  1631        1,0000  ZeroHalf: 10     5160     --- 
+      0     0       18,4848  1633        1,0000   ZeroHalf: 8     5378     --- 
+      0     0       18,4614  1631        1,0000   ZeroHalf: 9     5557     --- 
+      0     0       18,4158  1623        1,0000  ZeroHalf: 11     5757     --- 
+      0     0       18,3916  1623        1,0000  ZeroHalf: 10     5933     --- 
+      0     0       18,3705  1619        1,0000   ZeroHalf: 7     6147     --- 
+      0     0       18,3504  1614        1,0000  ZeroHalf: 10     6323     --- 
+      0     0       18,3254  1608        1,0000   ZeroHalf: 9     6572     --- 
+Detecting symmetries...
+      0     2       18,3254  1608        1,0000       12,9200     6572     --- 
+Elapsed time = 12,55 sec. (15259,76 ticks, tree = 0,02 MB, solutions = 5)
+      2     1        cutoff              1,0000       12,9200     7968     --- 
+      5     4       18,0056  1505        1,0000       12,9200    10201     --- 
+      8     4       17,7869  1468        1,0000       12,9200    12197     --- 
+     10     1        cutoff              1,0000       12,9200    15591     --- 
+     12     4       17,3892  1397        1,0000       12,9200    17526     --- 
+     16     3        cutoff              1,0000       12,9200    18708     --- 
+     20     1        cutoff              1,0000       12,9200    24231     --- 
+     24     4       16,5162  1250        1,0000       12,9200    27034     --- 
+     29     2        cutoff              1,0000       12,9200    30771     --- 
+     42     2        cutoff              1,0000       12,9200    39830     --- 
+Elapsed time = 14,80 sec. (19204,03 ticks, tree = 0,02 MB, solutions = 5)
+     46     4       15,2249   995        1,0000       12,9200    42580     --- 
+     61     3       14,0785   862        1,0000       12,9200    52013     --- 
+     78     1        cutoff              1,0000       12,9200    59835     --- 
+    109     3        9,7671   401        1,0000        9,8755    66658  887,55%
+
+Zero-half cuts applied:  41
+Gomory fractional cuts applied:  8
+
+Root node processing (before b&c):
+  Real time             =   12,41 sec. (15095,80 ticks)
+Parallel b&c, 12 threads:
+  Real time             =    5,08 sec. (8856,06 ticks)
+  Sync time (average)   =    4,18 sec.
+  Wait time (average)   =    0,00 sec.
+                          ------------
+Total (root+branch&cut) =   17,49 sec. (23951,86 ticks)
+
+<<< solve
+
+
+OBJECTIVE: 1
+OBJECTIVE: 1
+Commission: 10 91
+
+<<< post process
+
+
+<<< done
+

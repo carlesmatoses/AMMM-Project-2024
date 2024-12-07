@@ -1,0 +1,47 @@
+
+<<< setup
+
+
+<<< generate
+
+Version identifier: 22.1.1.0 | 2022-11-27 | 9160aff4d
+Tried aggregator 2 times.
+MIP Presolve eliminated 1066 rows and 244 columns.
+MIP Presolve modified 202 coefficients.
+Aggregator did 79 substitutions.
+Reduced MIP has 18542 rows, 5997 columns, and 43801 nonzeros.
+Reduced MIP has 5997 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0,09 sec. (133,06 ticks)
+Found incumbent of value 11,040000 after 0,17 sec. (250,48 ticks)
+Probing time = 0,05 sec. (34,69 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+MIP Presolve eliminated 24 rows and 6 columns.
+Reduced MIP has 18518 rows, 5991 columns, and 43747 nonzeros.
+Reduced MIP has 5991 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0,09 sec. (132,16 ticks)
+Probing time = 0,03 sec. (10,63 ticks)
+Clique table members: 27914.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 12 threads.
+Root relaxation solution time = 0,25 sec. (305,31 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                           11,0400     1527,9200              --- 
+*     0+    0                           11,5700     1527,9200              --- 
+      0     0      115,2917  3038       11,5700      115,2917       15  896,47%
+      0     0      114,2338  2945       11,5700      Cuts: 27      137  887,33%
+      0     0      113,9818  2932       11,5700       Cuts: 8      245  885,15%
+      0     0      113,9133  2929       11,5700      Cuts: 11      289  884,56%
+      0     0      113,8941  2926       11,5700   ZeroHalf: 8      323  884,39%
+      0     0      113,8710  2927       11,5700   ZeroHalf: 5      349  884,19%
+Detecting symmetries...
+      0     0      113,3295  2910       11,5700       Cuts: 8      467  879,51%
+      0     0      113,3193  2909       11,5700       Cuts: 3      495  879,42%
+      0     0      112,8863  2901       11,5700      Cuts: 10      607  875,68%
+      0     0      112,5497  2884       11,5700       Cuts: 9      727  872,77%
+      0     0      112,1453  2867       11,5700       Cuts: 2      831  869,25%
+      0     0      112,1335  2872       11,5700   ZeroHalf: 3      916  869,17%

@@ -1,0 +1,70 @@
+
+<<< setup
+
+
+<<< generate
+
+Version identifier: 22.1.1.0 | 2022-11-27 | 9160aff4d
+Tried aggregator 2 times.
+MIP Presolve eliminated 332 rows and 72 columns.
+MIP Presolve modified 74 coefficients.
+Aggregator did 35 substitutions.
+Reduced MIP has 3472 rows, 1153 columns, and 8115 nonzeros.
+Reduced MIP has 1153 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0,02 sec. (15,59 ticks)
+Found incumbent of value 63,290000 after 0,03 sec. (29,30 ticks)
+Probing fixed 20 vars, tightened 0 bounds.
+Probing time = 0,03 sec. (44,97 ticks)
+Cover probing fixed 1 vars, tightened 0 bounds.
+Tried aggregator 1 time.
+Detecting symmetries...
+MIP Presolve eliminated 58 rows and 21 columns.
+MIP Presolve modified 3 coefficients.
+Reduced MIP has 3414 rows, 1132 columns, and 7980 nonzeros.
+Reduced MIP has 1132 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0,00 sec. (12,21 ticks)
+Probing fixed 1 vars, tightened 0 bounds.
+Probing time = 0,00 sec. (12,64 ticks)
+Clique table members: 5273.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 12 threads.
+Root relaxation solution time = 0,08 sec. (110,83 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                           63,2900      296,7600           368,89%
+      0     0      120,8344   646       63,2900      120,8344     2030   90,92%
+*     0+    0                           67,0100      120,8344            80,32%
+*     0+    0                           71,3500      120,8344            69,35%
+      0     0        cutoff             71,3500       71,3500     2589    0,00%
+Elapsed time = 0,38 sec. (405,95 ticks, tree = 0,01 MB, solutions = 3)
+
+Clique cuts applied:  7
+Implied bound cuts applied:  294
+Zero-half cuts applied:  302
+Lift and project cuts applied:  1
+Gomory fractional cuts applied:  1
+
+Root node processing (before b&c):
+  Real time             =    0,38 sec. (406,05 ticks)
+Parallel b&c, 12 threads:
+  Real time             =    0,00 sec. (0,00 ticks)
+  Sync time (average)   =    0,00 sec.
+  Wait time (average)   =    0,00 sec.
+                          ------------
+Total (root+branch&cut) =    0,38 sec. (406,05 ticks)
+
+<<< solve
+
+
+OBJECTIVE: 71.35
+OBJECTIVE: 0.594583333
+Commission: 2 3 4 6 9 10 11 13 17 18 20 24 26 28 30 31
+
+<<< post process
+
+
+<<< done
+

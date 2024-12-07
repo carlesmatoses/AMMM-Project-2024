@@ -1,0 +1,47 @@
+
+<<< setup
+
+
+<<< generate
+
+Version identifier: 22.1.1.0 | 2022-11-27 | 9160aff4d
+Tried aggregator 2 times.
+MIP Presolve eliminated 741 rows and 150 columns.
+MIP Presolve modified 216 coefficients.
+Aggregator did 96 substitutions.
+Reduced MIP has 28135 rows, 9066 columns, and 67120 nonzeros.
+Reduced MIP has 9066 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0,17 sec. (218,79 ticks)
+Found incumbent of value 10,480000 after 0,33 sec. (417,92 ticks)
+Probing time = 0,06 sec. (45,49 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+MIP Presolve eliminated 44 rows and 11 columns.
+Reduced MIP has 28091 rows, 9055 columns, and 67021 nonzeros.
+Reduced MIP has 9055 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0,16 sec. (218,87 ticks)
+Probing time = 0,08 sec. (44,54 ticks)
+Clique table members: 42616.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 12 threads.
+Root relaxation solution time = 0,56 sec. (573,49 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                           10,4800     2316,9800              --- 
+*     0+    0                           11,1300     2316,9800              --- 
+*     0+    0                           11,8200     2316,9800              --- 
+*     0+    0                           11,9500     2316,9800              --- 
+      0     0      144,8113  4581       11,9500      144,8113       11     --- 
+      0     0      143,7788  4539       11,9500       Cuts: 7      154     --- 
+      0     0      143,4283  4513       11,9500      Cuts: 10      269     --- 
+      0     0      143,4077  4513       11,9500   ZeroHalf: 8      319     --- 
+      0     0      143,3902  4502       11,9500  ZeroHalf: 12      356     --- 
+      0     0      143,3821  4502       11,9500   ZeroHalf: 3      397     --- 
+Detecting symmetries...
+      0     0      143,1350  4488       11,9500       Cuts: 7      533     --- 
+      0     0      142,7684  4478       11,9500       Cuts: 3      656     --- 
+      0     0      142,4046  4467       11,9500       Cuts: 8      801     --- 
+      0     0      142,3937  4453       11,9500   ZeroHalf: 2      851     --- 

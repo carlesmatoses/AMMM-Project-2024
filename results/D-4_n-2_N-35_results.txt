@@ -1,0 +1,82 @@
+
+<<< setup
+
+
+<<< generate
+
+Version identifier: 22.1.1.0 | 2022-11-27 | 9160aff4d
+Tried aggregator 2 times.
+MIP Presolve eliminated 429 rows and 98 columns.
+MIP Presolve modified 80 coefficients.
+Aggregator did 35 substitutions.
+Reduced MIP has 3397 rows, 1127 columns, and 7955 nonzeros.
+Reduced MIP has 1127 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0,02 sec. (15,23 ticks)
+Found incumbent of value 15,750000 after 0,03 sec. (28,50 ticks)
+Probing fixed 4 vars, tightened 0 bounds.
+Probing time = 0,01 sec. (26,80 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+MIP Presolve eliminated 14 rows and 4 columns.
+Reduced MIP has 3383 rows, 1123 columns, and 7923 nonzeros.
+Reduced MIP has 1123 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0,02 sec. (11,54 ticks)
+Probing time = 0,00 sec. (4,17 ticks)
+Clique table members: 5229.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 12 threads.
+Root relaxation solution time = 0,05 sec. (39,13 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                           15,7500      288,6800              --- 
+      0     0       62,0875   493       15,7500       62,0875      953  294,21%
+*     0+    0                           16,6300       62,0875           273,35%
+      0     0       60,6093   611       16,6300     Cuts: 282     1201  243,91%
+      0     0       59,7545   603       16,6300     Cuts: 239     1373  243,91%
+*     0+    0                           18,4700       57,1929           209,65%
+      0     0       59,5399   627       18,4700 ZeroHalf: 145     1459  209,65%
+      0     0       58,9062   654       18,4700     Cuts: 186     1586  209,65%
+*     0+    0                           19,8400       57,1929           188,27%
+      0     0       58,7945   682       19,8400 ZeroHalf: 186     1676  175,04%
+Detecting symmetries...
+Detecting symmetries...
+      0     2       58,7945   681       19,8400       40,4960     1676  104,11%
+Elapsed time = 1,05 sec. (814,68 ticks, tree = 0,02 MB, solutions = 4)
+    142    85        cutoff             19,8400       40,4960    18675  104,11%
+    450   235       20,5075   150       19,8400       40,4960    40313  104,11%
+    655   338       29,4380   214       19,8400       40,4960    64570  104,11%
+    925   449       22,1140   192       19,8400       40,4960    83695  104,11%
+   1378   575        cutoff             19,8400       40,4960   107943  104,11%
+   1735   590        cutoff             19,8400       28,9400   121548   45,87%
+   2320   603        cutoff             19,8400       25,4090   144444   28,07%
+   2853   409        cutoff             19,8400       22,7133   169986   14,48%
+
+Implied bound cuts applied:  126
+Zero-half cuts applied:  344
+Lift and project cuts applied:  2
+Gomory fractional cuts applied:  6
+
+Root node processing (before b&c):
+  Real time             =    1,05 sec. (813,33 ticks)
+Parallel b&c, 12 threads:
+  Real time             =    2,47 sec. (2029,02 ticks)
+  Sync time (average)   =    0,55 sec.
+  Wait time (average)   =    0,00 sec.
+                          ------------
+Total (root+branch&cut) =    3,52 sec. (2842,35 ticks)
+
+<<< solve
+
+
+OBJECTIVE: 19.84
+OBJECTIVE: 0.708571429
+Commission: 2 6 14 15 22 24 25 35
+
+<<< post process
+
+
+<<< done
+

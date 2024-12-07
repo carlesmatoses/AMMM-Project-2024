@@ -1,0 +1,44 @@
+
+<<< setup
+
+
+<<< generate
+
+Version identifier: 22.1.1.0 | 2022-11-27 | 9160aff4d
+Tried aggregator 2 times.
+MIP Presolve eliminated 980 rows and 210 columns.
+MIP Presolve modified 236 coefficients.
+Aggregator did 95 substitutions.
+Reduced MIP has 27384 rows, 8815 columns, and 64901 nonzeros.
+Reduced MIP has 8815 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0,17 sec. (218,79 ticks)
+Found incumbent of value 9,370000 after 0,30 sec. (411,52 ticks)
+Probing time = 0,03 sec. (12,35 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+Reduced MIP has 27384 rows, 8815 columns, and 64901 nonzeros.
+Reduced MIP has 8815 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0,14 sec. (176,59 ticks)
+Probing time = 0,08 sec. (44,48 ticks)
+Clique table members: 41314.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 12 threads.
+Root relaxation solution time = 0,38 sec. (418,26 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                            9,3700     2213,7000              --- 
+*     0+    0                            9,6200     2213,7000              --- 
+*     0+    0                           10,9800     2213,7000              --- 
+*     0+    0                           11,4400     2213,7000              --- 
+      0     0      139,0312  4455       11,4400      139,0312       13     --- 
+      0     0      136,7450  4306       11,4400      Cuts: 19      287     --- 
+      0     0      136,4045  4279       11,4400       Cuts: 8      440     --- 
+      0     0      136,3731  4273       11,4400      Cuts: 10      504     --- 
+      0     0      136,3501  4270       11,4400       Cuts: 9      564     --- 
+      0     0      136,3348  4263       11,4400   ZeroHalf: 5      623     --- 
+Detecting symmetries...
+      0     0      136,0934  4338       11,4400       Cuts: 3      800     --- 
+      0     0      135,6781  4322       11,4400      Cuts: 32      999     --- 

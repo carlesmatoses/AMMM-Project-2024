@@ -1,0 +1,24 @@
+
+<<< setup
+
+
+<<< generate
+
+Version identifier: 22.1.1.0 | 2022-11-27 | 9160aff4d
+Row 'c1527' infeasible, all entries at implied bounds.
+Presolve time = 0,02 sec. (3,29 ticks)
+
+Root node processing (before b&c):
+  Real time             =    0,02 sec. (3,39 ticks)
+Parallel b&c, 12 threads:
+  Real time             =    0,00 sec. (0,00 ticks)
+  Sync time (average)   =    0,00 sec.
+  Wait time (average)   =    0,00 sec.
+                          ------------
+Total (root+branch&cut) =    0,02 sec. (3,39 ticks)
+
+<<< solve
+
+
+<<< no solution
+

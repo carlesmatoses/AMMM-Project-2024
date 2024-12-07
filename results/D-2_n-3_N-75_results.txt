@@ -1,0 +1,44 @@
+
+<<< setup
+
+
+<<< generate
+
+Version identifier: 22.1.1.0 | 2022-11-27 | 9160aff4d
+Tried aggregator 2 times.
+MIP Presolve eliminated 1151 rows and 270 columns.
+MIP Presolve modified 186 coefficients.
+Aggregator did 75 substitutions.
+Reduced MIP has 16537 rows, 5355 columns, and 38897 nonzeros.
+Reduced MIP has 5355 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0,08 sec. (113,82 ticks)
+Found incumbent of value 9,010000 after 0,16 sec. (214,44 ticks)
+Probing time = 0,03 sec. (26,75 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+MIP Presolve eliminated 12 rows and 3 columns.
+Reduced MIP has 16525 rows, 5352 columns, and 38870 nonzeros.
+Reduced MIP has 5352 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0,08 sec. (113,25 ticks)
+Probing time = 0,03 sec. (18,62 ticks)
+Clique table members: 24834.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 12 threads.
+Root relaxation solution time = 0,20 sec. (267,00 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                            9,0100     1355,8900              --- 
+*     0+    0                            9,4300     1355,8900              --- 
+*     0+    0                           10,4600     1355,8900              --- 
+      0     0      107,7530  2715       10,4600      107,7530       12  930,14%
+      0     0      107,0631  2687       10,4600      Cuts: 40      105  923,55%
+      0     0      106,2398  2661       10,4600      Cuts: 44      236  915,68%
+      0     0      106,1182  2657       10,4600  ZeroHalf: 27      307  914,51%
+      0     0      105,9546  2655       10,4600      Cuts: 30      392  906,21%
+      0     0      104,6352  2615       10,4600      Cuts: 27      681  900,34%
+Detecting symmetries...
+*     0+    0                           11,4900      104,6352           810,66%
+      0     0      104,2990  2608       11,4900      Cuts: 44      865  807,74%

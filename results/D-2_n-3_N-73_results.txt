@@ -1,0 +1,52 @@
+
+<<< setup
+
+
+<<< generate
+
+Version identifier: 22.1.1.0 | 2022-11-27 | 9160aff4d
+Tried aggregator 2 times.
+MIP Presolve eliminated 1094 rows and 260 columns.
+MIP Presolve modified 173 coefficients.
+Aggregator did 73 substitutions.
+Reduced MIP has 15678 rows, 5069 columns, and 36870 nonzeros.
+Reduced MIP has 5069 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0,08 sec. (105,81 ticks)
+Found incumbent of value 8,910000 after 0,14 sec. (199,60 ticks)
+Probing time = 0,05 sec. (33,74 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+MIP Presolve eliminated 24 rows and 6 columns.
+Reduced MIP has 15654 rows, 5063 columns, and 36816 nonzeros.
+Reduced MIP has 5063 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0,08 sec. (105,30 ticks)
+Probing time = 0,03 sec. (10,80 ticks)
+Clique table members: 23518.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 12 threads.
+Root relaxation solution time = 0,23 sec. (258,34 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                            8,9100     1268,9000              --- 
+*     0+    0                            9,2600     1268,9000              --- 
+*     0+    0                            9,4900     1268,9000              --- 
+*     0+    0                            9,9700     1268,9000              --- 
+*     0+    0                           10,1300     1268,9000              --- 
+      0     0      103,5614  2571       10,1300      103,5614       12  922,32%
+      0     0      102,3166  2541       10,1300      Cuts: 32      156  910,04%
+      0     0      101,8631  2524       10,1300      Cuts: 40      256  905,56%
+      0     0      101,7582  2520       10,1300  ZeroHalf: 43      321  904,52%
+      0     0      101,3371  2505       10,1300      Cuts: 37      491  900,37%
+      0     0      101,2191  2499       10,1300  ZeroHalf: 38      574  899,20%
+Detecting symmetries...
+      0     0      100,3089  2481       10,1300      Cuts: 49      781  890,22%
+      0     0       99,8565  2468       10,1300      Cuts: 28      905  885,75%
+*     0+    0                           11,0300       99,8565           805,32%
+      0     0       99,8251  2466       11,0300  ZeroHalf: 25      985  805,03%
+      0     0       99,4721  2460       11,0300      Cuts: 38     1147  801,83%
+      0     0       99,1039  2451       11,0300      Cuts: 43     1328  798,49%
+      0     0       99,0521  2447       11,0300  ZeroHalf: 40     1441  798,02%
+      0     0       98,6269  2435       11,0300      Cuts: 37     1564  794,17%

@@ -1,0 +1,88 @@
+
+<<< setup
+
+
+<<< generate
+
+Version identifier: 22.1.1.0 | 2022-11-27 | 9160aff4d
+Tried aggregator 2 times.
+MIP Presolve eliminated 59 rows and 10 columns.
+MIP Presolve modified 24 coefficients.
+Aggregator did 12 substitutions.
+Reduced MIP has 375 rows, 134 columns, and 880 nonzeros.
+Reduced MIP has 134 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0,00 sec. (1,33 ticks)
+Found incumbent of value 3,750000 after 0,00 sec. (2,44 ticks)
+Probing time = 0,02 sec. (1,60 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+MIP Presolve eliminated 7 rows and 2 columns.
+Reduced MIP has 368 rows, 132 columns, and 864 nonzeros.
+Reduced MIP has 132 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0,00 sec. (1,29 ticks)
+Probing time = 0,00 sec. (1,55 ticks)
+Clique table members: 643.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 12 threads.
+Root relaxation solution time = 0,00 sec. (1,26 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                            3,7500       34,5700           821,87%
+*     0+    0                            4,1800       34,5700           727,03%
+*     0+    0                            4,3500       34,5700           694,71%
+      0     0       11,5233    73        4,3500       11,5233       87  164,90%
+*     0+    0                            4,3700       11,5233           163,69%
+      0     0       10,3600    84        4,3700      Cuts: 77      140  137,07%
+*     0+    0                            4,5800       10,3600           126,20%
+      0     0        9,9292    75        4,5800      Cuts: 33      172  116,79%
+      0     0        9,8492    84        4,5800  ZeroHalf: 31      194  115,05%
+      0     0        9,7654    92        4,5800  ZeroHalf: 42      217  113,22%
+      0     0        9,6777    95        4,5800  ZeroHalf: 38      242  111,30%
+Detecting symmetries...
+      0     0        9,5633    95        4,5800  ZeroHalf: 31      251  108,80%
+      0     0        9,4398   103        4,5800  ZeroHalf: 51      289  106,11%
+      0     0        9,3387   102        4,5800  ZeroHalf: 44      321  103,90%
+      0     0        9,0257    92        4,5800      Cuts: 44      349   97,07%
+      0     0        8,9143   107        4,5800  ZeroHalf: 35      373   94,64%
+      0     0        8,6688   100        4,5800  ZeroHalf: 71      423   89,27%
+      0     0        8,6023   118        4,5800  ZeroHalf: 50      455   87,82%
+      0     0        8,4848   112        4,5800  ZeroHalf: 32      484   85,26%
+      0     0        8,3870   116        4,5800  ZeroHalf: 58      529   83,12%
+      0     0        8,3371   125        4,5800      Cuts: 40      566   82,03%
+      0     0        8,2619   118        4,5800  ZeroHalf: 44      606   80,39%
+      0     0        8,1928   116        4,5800      Cuts: 66      628   78,88%
+      0     0        8,1104   121        4,5800      Cuts: 29      669   77,08%
+      0     0        8,0461   114        4,5800  ZeroHalf: 30      703   75,68%
+      0     0        7,9087   114        4,5800      Cuts: 37      760   72,68%
+*     0+    0                            4,6900        7,9087            68,63%
+      0     0        cutoff              4,6900        4,6900      819    0,00%
+Elapsed time = 0,11 sec. (100,52 ticks, tree = 0,01 MB, solutions = 6)
+
+Clique cuts applied:  8
+Zero-half cuts applied:  108
+Gomory fractional cuts applied:  1
+
+Root node processing (before b&c):
+  Real time             =    0,11 sec. (100,54 ticks)
+Parallel b&c, 12 threads:
+  Real time             =    0,00 sec. (0,00 ticks)
+  Sync time (average)   =    0,00 sec.
+  Wait time (average)   =    0,00 sec.
+                          ------------
+Total (root+branch&cut) =    0,11 sec. (100,54 ticks)
+
+<<< solve
+
+
+OBJECTIVE: 4.69
+OBJECTIVE: 0.781666667
+Commission: 2 3 8 12
+
+<<< post process
+
+
+<<< done
+

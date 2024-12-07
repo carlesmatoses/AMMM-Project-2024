@@ -1,0 +1,59 @@
+
+<<< setup
+
+
+<<< generate
+
+Version identifier: 22.1.1.0 | 2022-11-27 | 9160aff4d
+Tried aggregator 2 times.
+MIP Presolve eliminated 967 rows and 220 columns.
+MIP Presolve modified 185 coefficients.
+Aggregator did 78 substitutions.
+Reduced MIP has 18099 rows, 5864 columns, and 42655 nonzeros.
+Reduced MIP has 5864 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0,09 sec. (128,40 ticks)
+Found incumbent of value 8,890000 after 0,17 sec. (242,46 ticks)
+Probing time = 0,05 sec. (25,46 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+MIP Presolve eliminated 16 rows and 4 columns.
+Reduced MIP has 18083 rows, 5860 columns, and 42619 nonzeros.
+Reduced MIP has 5860 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0,09 sec. (128,01 ticks)
+Probing time = 0,05 sec. (22,00 ticks)
+Clique table members: 27218.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 12 threads.
+Root relaxation solution time = 0,19 sec. (253,92 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                            8,8900     1484,2800              --- 
+*     0+    0                            9,1600     1484,2800              --- 
+*     0+    0                            9,7600     1484,2800              --- 
+*     0+    0                           10,3300     1484,2800              --- 
+      0     0      114,1754  2971       10,3300      114,1754     3737     --- 
+      0     0      113,6677  2952       10,3300      Cuts: 10     3823     --- 
+      0     0      113,6085  2949       10,3300   ZeroHalf: 7     3862  999,79%
+      0     0      113,5433  2945       10,3300   ZeroHalf: 9     3906  999,16%
+      0     0      113,5146  2941       10,3300   ZeroHalf: 6     3932  998,88%
+      0     0      113,1342  2923       10,3300      Cuts: 14     4042  995,20%
+Detecting symmetries...
+      0     0      113,0762  2914       10,3300  ZeroHalf: 13     4088  994,64%
+      0     0      113,0132  2924       10,3300   ZeroHalf: 8     4174  994,03%
+      0     0      112,6838  2916       10,3300       Cuts: 7     4297  990,84%
+      0     0      112,6669  2917       10,3300       Cuts: 8     4342  990,68%
+      0     0      112,3628  2911       10,3300       Cuts: 9     4460  987,73%
+      0     0      112,3350  2907       10,3300       Cuts: 8     4528  987,46%
+      0     0      112,1343  2894       10,3300      Cuts: 12     4650  985,52%
+      0     0      112,1194  2894       10,3300   ZeroHalf: 9     4714  985,38%
+      0     0      111,8501  2884       10,3300      Cuts: 10     4883  982,73%
+      0     0      111,8025  2882       10,3300   ZeroHalf: 8     4962  982,31%
+      0     0      111,7916  2881       10,3300   ZeroHalf: 6     5013  982,20%
+      0     0      111,7594  2876       10,3300   ZeroHalf: 5     5073  981,89%
+      0     0      111,7446  2876       10,3300       Cuts: 7     5136  981,75%
+Detecting symmetries...
+      0     2      111,7446  2876       10,3300      111,7446     5136  981,75%
+Elapsed time = 7,95 sec. (8923,25 ticks, tree = 0,02 MB, solutions = 4)

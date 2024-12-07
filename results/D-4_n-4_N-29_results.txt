@@ -1,0 +1,45 @@
+
+<<< setup
+
+
+<<< generate
+
+Version identifier: 22.1.1.0 | 2022-11-27 | 9160aff4d
+Tried aggregator 2 times.
+MIP Presolve eliminated 295 rows and 66 columns.
+MIP Presolve modified 62 coefficients.
+Aggregator did 29 substitutions.
+Reduced MIP has 2333 rows, 775 columns, and 5455 nonzeros.
+Reduced MIP has 775 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0,00 sec. (9,46 ticks)
+Found incumbent of value 69,090000 after 0,02 sec. (17,92 ticks)
+Probing fixed 490 vars, tightened 0 bounds.
+Probing changed sense of 1092 constraints.
+Probing time = 0,06 sec. (97,20 ticks)
+Cover probing fixed 15 vars, tightened 270 bounds.
+Tried aggregator 1 time.
+MIP Presolve eliminated 2333 rows and 775 columns.
+All rows and columns eliminated.
+Presolve time = 0,00 sec. (0,82 ticks)
+
+Root node processing (before b&c):
+  Real time             =    0,08 sec. (117,40 ticks)
+Parallel b&c, 12 threads:
+  Real time             =    0,00 sec. (0,00 ticks)
+  Sync time (average)   =    0,00 sec.
+  Wait time (average)   =    0,00 sec.
+                          ------------
+Total (root+branch&cut) =    0,08 sec. (117,40 ticks)
+
+<<< solve
+
+
+OBJECTIVE: 69.09
+OBJECTIVE: 0.57575
+Commission: 1 2 5 7 8 9 10 11 15 17 19 20 22 24 25 27
+
+<<< post process
+
+
+<<< done
+
