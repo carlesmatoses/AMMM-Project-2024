@@ -49,3 +49,7 @@ Ordenar document com:
     - check if it is correct
   - local search algorithm
   - GRASP algorithm
+
+
+# gràfiques:
+1. com altera el numero de departaments, membres i p en el temps d'execució cplex
