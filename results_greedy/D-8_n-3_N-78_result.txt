@@ -1,0 +1,4 @@
+GREEDY RESULTS:
+Average compatibility: 0
+GREEDY COMMISSION: Commission not found
+Time taken: 0.306474 seconds.

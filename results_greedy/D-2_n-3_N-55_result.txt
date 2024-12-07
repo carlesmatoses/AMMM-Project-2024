@@ -1,0 +1,4 @@
+GREEDY RESULTS:
+Average compatibility: 0.655333
+GREEDY COMMISSION: 2, 7, 21, 31, 38, 43
+Time taken: 0.0378603 seconds.
