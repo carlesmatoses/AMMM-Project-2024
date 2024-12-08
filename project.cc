@@ -99,20 +99,21 @@ bool is_valid_candidate(int candidate, const vector<bool>& commission) {
 }
 
 double compute_candidate_score(int candidate, const vector<bool>& commission) {
+    int commissionSize = accumulate(n.begin(), n.end(), 0);
     double score = 0.0;
     if (isIntermediate(candidate, commission)) score += 2;
     for (int i = 0; i < N; ++i) {
         if (i == candidate) continue;
         if (commission[i]) {
             if (m[candidate][i] >= 0.15 or existsIntermediate(candidate, i, commission)) score += 2*m[candidate][i];
-            else score -= 2*N;
+            else score -= 2*commissionSize;
         }
         else {
             vector<bool> hypothetical_commission = commission;
             hypothetical_commission[candidate] = true;
             if (is_valid_candidate(i, hypothetical_commission)) {
                 if (m[candidate][i] >= 0.15 or existsIntermediate(candidate, i, commission)) score += m[candidate][i];
-                else score -= N;
+                else score -= commissionSize;
             }
         }
     }
@@ -312,6 +313,7 @@ void solve_with_grasp() {
     chrono::duration<double> max_duration(MAX_TIME);
     
     auto start = chrono::high_resolution_clock::now();  // Start timer
+    auto best_solution_time = chrono::high_resolution_clock::now();  // Time when the best solution was found
     
     vector<bool> bestSolution(N, false);
     double bestCompatibility = 0;
@@ -328,11 +330,13 @@ void solve_with_grasp() {
         if (compatibility > bestCompatibility) {
             bestSolution = solution;
             bestCompatibility = compatibility;
+            best_solution_time = chrono::high_resolution_clock::now();
         }
     }
     
     auto end = chrono::high_resolution_clock::now();    // End timer
     chrono::duration<double> elapsed = end - start;     // Elapsed time
+    chrono::duration<double> elapsed_until_best_solution = best_solution_time - start;     // Elapsed time
     
     cout << "GRASP RESULTS:" << endl;
     cout << "Average compatibility: " << bestCompatibility << endl;
@@ -347,7 +351,8 @@ void solve_with_grasp() {
     }
     cout << endl;
     
-    cout << "Time taken: " << elapsed.count() << " seconds." << endl;
+    cout << "Time taken to find the best solution: " << elapsed_until_best_solution.count() << " seconds." << endl;
+    cout << "Total time taken: " << elapsed.count() << " seconds." << endl;
 }
 
 int main() {
