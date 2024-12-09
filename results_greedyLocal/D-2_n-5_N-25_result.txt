@@ -1,0 +1,4 @@
+GREEDY WITH LOCAL SEARCH RESULTS:
+Average compatibility: 0.602
+GREEDY WITH LOCAL SEARCH COMMISSION: 4, 5, 8, 9, 12, 16, 17, 20, 22, 23
+Time taken: 0.0068656 seconds.

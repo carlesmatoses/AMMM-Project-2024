@@ -1,0 +1,4 @@
+GREEDY WITH LOCAL SEARCH RESULTS:
+Average compatibility: 0
+GREEDY WITH LOCAL SEARCH COMMISSION: Commission not found
+Time taken: 0.0377869 seconds.

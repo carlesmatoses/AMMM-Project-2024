@@ -1,0 +1,4 @@
+GRASP RESULTS:
+Average compatibility: 0.706889
+GRASP COMMISSION: 1, 4, 6, 8, 13, 28, 29, 30, 31, 32
+Time taken: 17.3876 seconds.

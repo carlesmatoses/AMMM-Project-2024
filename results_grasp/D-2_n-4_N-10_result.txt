@@ -1,0 +1,4 @@
+GRASP RESULTS:
+Average compatibility: 0
+GRASP COMMISSION: Commission not found
+Time taken: 0.358995 seconds.
