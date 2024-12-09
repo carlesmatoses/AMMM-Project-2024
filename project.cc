@@ -9,6 +9,7 @@ using namespace std;
 
 // Local Search
 const string SEARCH_POLICY = "FirstImprovement";
+// const string SEARCH_POLICY = "BeststImprovement";
 
 // GRASP Constans
 const int MAX_TIME = 60;
