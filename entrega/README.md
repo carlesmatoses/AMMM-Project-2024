@@ -1,8 +1,8 @@
 This folder contains the required files:
 - [x] (Generated instances)
 - [x] (OPL, .mod file)
-- [ ] (Instance Generator)
-- [ ] (Instance Solver)
+- [x] (Instance Generator)
+- [x] (Instance Solver)
 - [x] (PDF)
 - [x] (Presentation)
 
