@@ -1,5 +1,5 @@
 This folder contains the required files:
-Generated instances:
+- [x] (Generated instances)
 
 Instance Generator:
 
